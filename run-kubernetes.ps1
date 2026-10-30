@@ -1,12 +1,12 @@
 param(
-    [ValidateSet('setup', 'plan', 'verify', 'run')]
+    [ValidateSet('setup', 'plan', 'verify', 'inspect', 'run')]
     [string]$Mode = 'run',
     [ValidateRange(100, 1000)]
     [int]$DatasetSize = 100,
     [int]$Tasks = 0,
     [switch]$AllDatasets,
     [ValidateSet('k3s', 'kind')]
-    [string]$ClusterMode = 'k3s'
+    [string]$ClusterMode = 'kind'
 )
 $ErrorActionPreference = 'Stop'
 if ($Tasks -lt 0) { throw 'Tasks harus positif, atau 0 untuk seluruh dataset.' }
@@ -16,8 +16,8 @@ if ($AllDatasets -and ($Mode -notin @('run', 'plan') -or $Tasks -ne 0)) {
 }
 if ($ClusterMode -eq 'k3s') {
     $taskK3sArgs = @('env', 'SOKA_CLUSTER_MODE=k3s', 'SOKA_KUBE_CONTEXT=default', 'KUBECONFIG=.kube/k3s.yaml', 'python3')
-    if ($Mode -eq 'setup') {
-        $taskK3sArgs += @('kube_backend.py', 'setup')
+    if ($Mode -in @('setup', 'inspect')) {
+        $taskK3sArgs += @('kube_backend.py', $Mode)
     } elseif ($Mode -eq 'run') {
         $taskK3sArgs += @('scripts/submit_experiment.py', '--dataset-size', "$DatasetSize")
         if ($AllDatasets) { $taskK3sArgs += '--all-datasets' }
@@ -32,16 +32,16 @@ if ($ClusterMode -eq 'k3s') {
     exit 0
 }
 if ($Mode -eq 'setup') {
-    & wsl -d Ubuntu --cd $PSScriptRoot -- python3 kubernetes/install_kind.py
+    & wsl -d Ubuntu --cd $PSScriptRoot -- env SOKA_CLUSTER_MODE=kind SOKA_KUBE_CONTEXT=kind-soka-local SOKA_IN_CLUSTER=0 KUBECONFIG=.kube/kind.yaml python3 kubernetes/install_kind.py
     if ($LASTEXITCODE -ne 0) { throw 'Pemasangan kind gagal.' }
-    & wsl -d Ubuntu --cd $PSScriptRoot -- python3 kube_backend.py setup
+    & wsl -d Ubuntu --cd $PSScriptRoot -- env SOKA_CLUSTER_MODE=kind SOKA_KUBE_CONTEXT=kind-soka-local SOKA_IN_CLUSTER=0 KUBECONFIG=.kube/kind.yaml python3 kube_backend.py setup
 } else {
     $taskDatasetSizes = if ($AllDatasets) { 100..1000 | Where-Object { $_ % 50 -eq 0 } } else { @($DatasetSize) }
     foreach ($taskSize in $taskDatasetSizes) {
-        $taskArguments = @('scheduler.py', $Mode, '--dataset-size', "$taskSize")
-        if ($Tasks -gt 0) { $taskArguments += @('--tasks', "$Tasks") }
+        $taskArguments = if ($Mode -eq 'inspect') { @('kube_backend.py', 'inspect') } else { @('scheduler.py', $Mode, '--dataset-size', "$taskSize") }
+        if ($Tasks -gt 0 -and $Mode -ne 'inspect') { $taskArguments += @('--tasks', "$Tasks") }
         Write-Host "`nDataset GoCJ: $taskSize task" -ForegroundColor Cyan
-        & wsl -d Ubuntu --cd $PSScriptRoot -- python3 @taskArguments
+        & wsl -d Ubuntu --cd $PSScriptRoot -- env SOKA_CLUSTER_MODE=kind SOKA_KUBE_CONTEXT=kind-soka-local SOKA_IN_CLUSTER=0 KUBECONFIG=.kube/kind.yaml python3 @taskArguments
         if ($LASTEXITCODE -ne 0) { throw "Eksekusi dataset $taskSize gagal; rangkaian dihentikan." }
     }
 }

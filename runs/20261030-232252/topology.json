@@ -1,0 +1,52 @@
+{
+  "datacenter": "soka-local",
+  "context": "kind-soka-local",
+  "namespace": "soka-heuristik",
+  "mode": "local-kubernetes-container-lab",
+  "physical_hosts_verified": false,
+  "note": "Nodes are kind containers; pods are not VMs.",
+  "hosts": [
+    {
+      "name": "host1",
+      "node": "soka-local-worker"
+    },
+    {
+      "name": "host2",
+      "node": "soka-local-worker2"
+    }
+  ],
+  "pods": [
+    {
+      "pod": "rr-worker-0",
+      "host": "host1",
+      "node": "soka-local-worker",
+      "uid": "02a73c2e-4ba1-4000-9249-4dc026b93721",
+      "phase": "Running",
+      "cpu_limit": 1
+    },
+    {
+      "pod": "rr-worker-1",
+      "host": "host1",
+      "node": "soka-local-worker",
+      "uid": "895f9896-5f53-447f-a0fb-916a6d3d46ba",
+      "phase": "Running",
+      "cpu_limit": 1
+    },
+    {
+      "pod": "rr-worker-2",
+      "host": "host2",
+      "node": "soka-local-worker2",
+      "uid": "6bcb0316-08ac-4023-a59e-944db9846bea",
+      "phase": "Running",
+      "cpu_limit": 1
+    },
+    {
+      "pod": "rr-worker-3",
+      "host": "host2",
+      "node": "soka-local-worker2",
+      "uid": "0fa8b040-dca5-4e2c-b5a8-b4928cb3b176",
+      "phase": "Running",
+      "cpu_limit": 1
+    }
+  ]
+}

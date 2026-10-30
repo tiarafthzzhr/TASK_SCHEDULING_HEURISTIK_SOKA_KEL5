@@ -83,11 +83,18 @@ class KubernetesTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "replaced"):
                 kube.execute(self.data["workers"][0], {"task": 0, "iterations": 1}, "")
 
-    def test_commands_always_target_own_context(self):
+    def test_kind_commands_target_only_own_control_plane(self):
         with patch.object(kube, "command", return_value="ok") as call:
             kube.kubectl("get", "pods")
-        self.assertEqual(call.call_args.args[0][:5],
-                         ["kubectl", "--context", "kind-soka-local", "--namespace", "soka-heuristik"])
+        self.assertEqual(call.call_args.args[0][:7],
+                         ["docker", "exec", "soka-local-control-plane", "kubectl",
+                          "--kubeconfig=/etc/kubernetes/admin.conf", "--namespace", "soka-heuristik"])
+
+    def test_kind_stdin_is_forwarded_for_worker_code(self):
+        with patch.object(kube, "command", return_value="ok") as call:
+            kube.kubectl("exec", "-i", "rr-worker-0", "--", "python3", "-", source="print(1)")
+        self.assertEqual(call.call_args.args[0][:4], ["docker", "exec", "-i", "soka-local-control-plane"])
+        self.assertEqual(call.call_args.args[1], "print(1)")
 
     def test_end_to_end_runner_with_fake_cluster_and_real_cpu_work(self):
         with tempfile.TemporaryDirectory() as folder:

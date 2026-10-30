@@ -1,0 +1,2402 @@
+[
+  {
+    "task": 0,
+    "mi": 93000,
+    "worker_index": 0,
+    "iterations": 930000
+  },
+  {
+    "task": 1,
+    "mi": 103000,
+    "worker_index": 1,
+    "iterations": 1030000
+  },
+  {
+    "task": 2,
+    "mi": 83000,
+    "worker_index": 2,
+    "iterations": 830000
+  },
+  {
+    "task": 3,
+    "mi": 83000,
+    "worker_index": 3,
+    "iterations": 830000
+  },
+  {
+    "task": 4,
+    "mi": 99000,
+    "worker_index": 0,
+    "iterations": 990000
+  },
+  {
+    "task": 5,
+    "mi": 95000,
+    "worker_index": 1,
+    "iterations": 950000
+  },
+  {
+    "task": 6,
+    "mi": 53000,
+    "worker_index": 2,
+    "iterations": 530000
+  },
+  {
+    "task": 7,
+    "mi": 101000,
+    "worker_index": 3,
+    "iterations": 1010000
+  },
+  {
+    "task": 8,
+    "mi": 117000,
+    "worker_index": 0,
+    "iterations": 1170000
+  },
+  {
+    "task": 9,
+    "mi": 121000,
+    "worker_index": 1,
+    "iterations": 1210000
+  },
+  {
+    "task": 10,
+    "mi": 109000,
+    "worker_index": 2,
+    "iterations": 1090000
+  },
+  {
+    "task": 11,
+    "mi": 77000,
+    "worker_index": 3,
+    "iterations": 770000
+  },
+  {
+    "task": 12,
+    "mi": 101000,
+    "worker_index": 0,
+    "iterations": 1010000
+  },
+  {
+    "task": 13,
+    "mi": 55000,
+    "worker_index": 1,
+    "iterations": 550000
+  },
+  {
+    "task": 14,
+    "mi": 49000,
+    "worker_index": 2,
+    "iterations": 490000
+  },
+  {
+    "task": 15,
+    "mi": 59000,
+    "worker_index": 3,
+    "iterations": 590000
+  },
+  {
+    "task": 16,
+    "mi": 49000,
+    "worker_index": 0,
+    "iterations": 490000
+  },
+  {
+    "task": 17,
+    "mi": 101000,
+    "worker_index": 1,
+    "iterations": 1010000
+  },
+  {
+    "task": 18,
+    "mi": 15000,
+    "worker_index": 2,
+    "iterations": 150000
+  },
+  {
+    "task": 19,
+    "mi": 47000,
+    "worker_index": 3,
+    "iterations": 470000
+  },
+  {
+    "task": 20,
+    "mi": 95000,
+    "worker_index": 0,
+    "iterations": 950000
+  },
+  {
+    "task": 21,
+    "mi": 73000,
+    "worker_index": 1,
+    "iterations": 730000
+  },
+  {
+    "task": 22,
+    "mi": 525000,
+    "worker_index": 2,
+    "iterations": 5250000
+  },
+  {
+    "task": 23,
+    "mi": 337500,
+    "worker_index": 3,
+    "iterations": 3375000
+  },
+  {
+    "task": 24,
+    "mi": 65000,
+    "worker_index": 0,
+    "iterations": 650000
+  },
+  {
+    "task": 25,
+    "mi": 75000,
+    "worker_index": 1,
+    "iterations": 750000
+  },
+  {
+    "task": 26,
+    "mi": 117000,
+    "worker_index": 2,
+    "iterations": 1170000
+  },
+  {
+    "task": 27,
+    "mi": 85000,
+    "worker_index": 3,
+    "iterations": 850000
+  },
+  {
+    "task": 28,
+    "mi": 337500,
+    "worker_index": 0,
+    "iterations": 3375000
+  },
+  {
+    "task": 29,
+    "mi": 101000,
+    "worker_index": 1,
+    "iterations": 1010000
+  },
+  {
+    "task": 30,
+    "mi": 59000,
+    "worker_index": 2,
+    "iterations": 590000
+  },
+  {
+    "task": 31,
+    "mi": 121000,
+    "worker_index": 3,
+    "iterations": 1210000
+  },
+  {
+    "task": 32,
+    "mi": 47000,
+    "worker_index": 0,
+    "iterations": 470000
+  },
+  {
+    "task": 33,
+    "mi": 129000,
+    "worker_index": 1,
+    "iterations": 1290000
+  },
+  {
+    "task": 34,
+    "mi": 63000,
+    "worker_index": 2,
+    "iterations": 630000
+  },
+  {
+    "task": 35,
+    "mi": 55000,
+    "worker_index": 3,
+    "iterations": 550000
+  },
+  {
+    "task": 36,
+    "mi": 85000,
+    "worker_index": 0,
+    "iterations": 850000
+  },
+  {
+    "task": 37,
+    "mi": 51000,
+    "worker_index": 1,
+    "iterations": 510000
+  },
+  {
+    "task": 38,
+    "mi": 27500,
+    "worker_index": 2,
+    "iterations": 275000
+  },
+  {
+    "task": 39,
+    "mi": 99000,
+    "worker_index": 3,
+    "iterations": 990000
+  },
+  {
+    "task": 40,
+    "mi": 91000,
+    "worker_index": 0,
+    "iterations": 910000
+  },
+  {
+    "task": 41,
+    "mi": 81000,
+    "worker_index": 1,
+    "iterations": 810000
+  },
+  {
+    "task": 42,
+    "mi": 63000,
+    "worker_index": 2,
+    "iterations": 630000
+  },
+  {
+    "task": 43,
+    "mi": 105000,
+    "worker_index": 3,
+    "iterations": 1050000
+  },
+  {
+    "task": 44,
+    "mi": 125000,
+    "worker_index": 0,
+    "iterations": 1250000
+  },
+  {
+    "task": 45,
+    "mi": 89000,
+    "worker_index": 1,
+    "iterations": 890000
+  },
+  {
+    "task": 46,
+    "mi": 73000,
+    "worker_index": 2,
+    "iterations": 730000
+  },
+  {
+    "task": 47,
+    "mi": 123000,
+    "worker_index": 3,
+    "iterations": 1230000
+  },
+  {
+    "task": 48,
+    "mi": 525000,
+    "worker_index": 0,
+    "iterations": 5250000
+  },
+  {
+    "task": 49,
+    "mi": 83000,
+    "worker_index": 1,
+    "iterations": 830000
+  },
+  {
+    "task": 50,
+    "mi": 107000,
+    "worker_index": 2,
+    "iterations": 1070000
+  },
+  {
+    "task": 51,
+    "mi": 129000,
+    "worker_index": 3,
+    "iterations": 1290000
+  },
+  {
+    "task": 52,
+    "mi": 125000,
+    "worker_index": 0,
+    "iterations": 1250000
+  },
+  {
+    "task": 53,
+    "mi": 89000,
+    "worker_index": 1,
+    "iterations": 890000
+  },
+  {
+    "task": 54,
+    "mi": 73000,
+    "worker_index": 2,
+    "iterations": 730000
+  },
+  {
+    "task": 55,
+    "mi": 95000,
+    "worker_index": 3,
+    "iterations": 950000
+  },
+  {
+    "task": 56,
+    "mi": 109000,
+    "worker_index": 0,
+    "iterations": 1090000
+  },
+  {
+    "task": 57,
+    "mi": 103000,
+    "worker_index": 1,
+    "iterations": 1030000
+  },
+  {
+    "task": 58,
+    "mi": 27500,
+    "worker_index": 2,
+    "iterations": 275000
+  },
+  {
+    "task": 59,
+    "mi": 77000,
+    "worker_index": 3,
+    "iterations": 770000
+  },
+  {
+    "task": 60,
+    "mi": 45000,
+    "worker_index": 0,
+    "iterations": 450000
+  },
+  {
+    "task": 61,
+    "mi": 99000,
+    "worker_index": 1,
+    "iterations": 990000
+  },
+  {
+    "task": 62,
+    "mi": 55000,
+    "worker_index": 2,
+    "iterations": 550000
+  },
+  {
+    "task": 63,
+    "mi": 89000,
+    "worker_index": 3,
+    "iterations": 890000
+  },
+  {
+    "task": 64,
+    "mi": 113000,
+    "worker_index": 0,
+    "iterations": 1130000
+  },
+  {
+    "task": 65,
+    "mi": 107000,
+    "worker_index": 1,
+    "iterations": 1070000
+  },
+  {
+    "task": 66,
+    "mi": 63000,
+    "worker_index": 2,
+    "iterations": 630000
+  },
+  {
+    "task": 67,
+    "mi": 83000,
+    "worker_index": 3,
+    "iterations": 830000
+  },
+  {
+    "task": 68,
+    "mi": 109000,
+    "worker_index": 0,
+    "iterations": 1090000
+  },
+  {
+    "task": 69,
+    "mi": 129000,
+    "worker_index": 1,
+    "iterations": 1290000
+  },
+  {
+    "task": 70,
+    "mi": 121000,
+    "worker_index": 2,
+    "iterations": 1210000
+  },
+  {
+    "task": 71,
+    "mi": 85000,
+    "worker_index": 3,
+    "iterations": 850000
+  },
+  {
+    "task": 72,
+    "mi": 83000,
+    "worker_index": 0,
+    "iterations": 830000
+  },
+  {
+    "task": 73,
+    "mi": 95000,
+    "worker_index": 1,
+    "iterations": 950000
+  },
+  {
+    "task": 74,
+    "mi": 79000,
+    "worker_index": 2,
+    "iterations": 790000
+  },
+  {
+    "task": 75,
+    "mi": 67000,
+    "worker_index": 3,
+    "iterations": 670000
+  },
+  {
+    "task": 76,
+    "mi": 101000,
+    "worker_index": 0,
+    "iterations": 1010000
+  },
+  {
+    "task": 77,
+    "mi": 89000,
+    "worker_index": 1,
+    "iterations": 890000
+  },
+  {
+    "task": 78,
+    "mi": 61000,
+    "worker_index": 2,
+    "iterations": 610000
+  },
+  {
+    "task": 79,
+    "mi": 27500,
+    "worker_index": 3,
+    "iterations": 275000
+  },
+  {
+    "task": 80,
+    "mi": 71000,
+    "worker_index": 0,
+    "iterations": 710000
+  },
+  {
+    "task": 81,
+    "mi": 115000,
+    "worker_index": 1,
+    "iterations": 1150000
+  },
+  {
+    "task": 82,
+    "mi": 75000,
+    "worker_index": 2,
+    "iterations": 750000
+  },
+  {
+    "task": 83,
+    "mi": 103000,
+    "worker_index": 3,
+    "iterations": 1030000
+  },
+  {
+    "task": 84,
+    "mi": 115000,
+    "worker_index": 0,
+    "iterations": 1150000
+  },
+  {
+    "task": 85,
+    "mi": 61000,
+    "worker_index": 1,
+    "iterations": 610000
+  },
+  {
+    "task": 86,
+    "mi": 67000,
+    "worker_index": 2,
+    "iterations": 670000
+  },
+  {
+    "task": 87,
+    "mi": 63000,
+    "worker_index": 3,
+    "iterations": 630000
+  },
+  {
+    "task": 88,
+    "mi": 127000,
+    "worker_index": 0,
+    "iterations": 1270000
+  },
+  {
+    "task": 89,
+    "mi": 107000,
+    "worker_index": 1,
+    "iterations": 1070000
+  },
+  {
+    "task": 90,
+    "mi": 101000,
+    "worker_index": 2,
+    "iterations": 1010000
+  },
+  {
+    "task": 91,
+    "mi": 135000,
+    "worker_index": 3,
+    "iterations": 1350000
+  },
+  {
+    "task": 92,
+    "mi": 101000,
+    "worker_index": 0,
+    "iterations": 1010000
+  },
+  {
+    "task": 93,
+    "mi": 87000,
+    "worker_index": 1,
+    "iterations": 870000
+  },
+  {
+    "task": 94,
+    "mi": 99000,
+    "worker_index": 2,
+    "iterations": 990000
+  },
+  {
+    "task": 95,
+    "mi": 712500,
+    "worker_index": 3,
+    "iterations": 7125000
+  },
+  {
+    "task": 96,
+    "mi": 135000,
+    "worker_index": 0,
+    "iterations": 1350000
+  },
+  {
+    "task": 97,
+    "mi": 91000,
+    "worker_index": 1,
+    "iterations": 910000
+  },
+  {
+    "task": 98,
+    "mi": 101000,
+    "worker_index": 2,
+    "iterations": 1010000
+  },
+  {
+    "task": 99,
+    "mi": 75000,
+    "worker_index": 3,
+    "iterations": 750000
+  },
+  {
+    "task": 100,
+    "mi": 127000,
+    "worker_index": 0,
+    "iterations": 1270000
+  },
+  {
+    "task": 101,
+    "mi": 107000,
+    "worker_index": 1,
+    "iterations": 1070000
+  },
+  {
+    "task": 102,
+    "mi": 125000,
+    "worker_index": 2,
+    "iterations": 1250000
+  },
+  {
+    "task": 103,
+    "mi": 117000,
+    "worker_index": 3,
+    "iterations": 1170000
+  },
+  {
+    "task": 104,
+    "mi": 47000,
+    "worker_index": 0,
+    "iterations": 470000
+  },
+  {
+    "task": 105,
+    "mi": 27500,
+    "worker_index": 1,
+    "iterations": 275000
+  },
+  {
+    "task": 106,
+    "mi": 117000,
+    "worker_index": 2,
+    "iterations": 1170000
+  },
+  {
+    "task": 107,
+    "mi": 87000,
+    "worker_index": 3,
+    "iterations": 870000
+  },
+  {
+    "task": 108,
+    "mi": 95000,
+    "worker_index": 0,
+    "iterations": 950000
+  },
+  {
+    "task": 109,
+    "mi": 101000,
+    "worker_index": 1,
+    "iterations": 1010000
+  },
+  {
+    "task": 110,
+    "mi": 129000,
+    "worker_index": 2,
+    "iterations": 1290000
+  },
+  {
+    "task": 111,
+    "mi": 525000,
+    "worker_index": 3,
+    "iterations": 5250000
+  },
+  {
+    "task": 112,
+    "mi": 53000,
+    "worker_index": 0,
+    "iterations": 530000
+  },
+  {
+    "task": 113,
+    "mi": 27500,
+    "worker_index": 1,
+    "iterations": 275000
+  },
+  {
+    "task": 114,
+    "mi": 91000,
+    "worker_index": 2,
+    "iterations": 910000
+  },
+  {
+    "task": 115,
+    "mi": 97000,
+    "worker_index": 3,
+    "iterations": 970000
+  },
+  {
+    "task": 116,
+    "mi": 73000,
+    "worker_index": 0,
+    "iterations": 730000
+  },
+  {
+    "task": 117,
+    "mi": 91000,
+    "worker_index": 1,
+    "iterations": 910000
+  },
+  {
+    "task": 118,
+    "mi": 107000,
+    "worker_index": 2,
+    "iterations": 1070000
+  },
+  {
+    "task": 119,
+    "mi": 117000,
+    "worker_index": 3,
+    "iterations": 1170000
+  },
+  {
+    "task": 120,
+    "mi": 115000,
+    "worker_index": 0,
+    "iterations": 1150000
+  },
+  {
+    "task": 121,
+    "mi": 67000,
+    "worker_index": 1,
+    "iterations": 670000
+  },
+  {
+    "task": 122,
+    "mi": 67000,
+    "worker_index": 2,
+    "iterations": 670000
+  },
+  {
+    "task": 123,
+    "mi": 900000,
+    "worker_index": 3,
+    "iterations": 9000000
+  },
+  {
+    "task": 124,
+    "mi": 119000,
+    "worker_index": 0,
+    "iterations": 1190000
+  },
+  {
+    "task": 125,
+    "mi": 87000,
+    "worker_index": 1,
+    "iterations": 870000
+  },
+  {
+    "task": 126,
+    "mi": 113000,
+    "worker_index": 2,
+    "iterations": 1130000
+  },
+  {
+    "task": 127,
+    "mi": 65000,
+    "worker_index": 3,
+    "iterations": 650000
+  },
+  {
+    "task": 128,
+    "mi": 129000,
+    "worker_index": 0,
+    "iterations": 1290000
+  },
+  {
+    "task": 129,
+    "mi": 49000,
+    "worker_index": 1,
+    "iterations": 490000
+  },
+  {
+    "task": 130,
+    "mi": 83000,
+    "worker_index": 2,
+    "iterations": 830000
+  },
+  {
+    "task": 131,
+    "mi": 95000,
+    "worker_index": 3,
+    "iterations": 950000
+  },
+  {
+    "task": 132,
+    "mi": 113000,
+    "worker_index": 0,
+    "iterations": 1130000
+  },
+  {
+    "task": 133,
+    "mi": 123000,
+    "worker_index": 1,
+    "iterations": 1230000
+  },
+  {
+    "task": 134,
+    "mi": 107000,
+    "worker_index": 2,
+    "iterations": 1070000
+  },
+  {
+    "task": 135,
+    "mi": 525000,
+    "worker_index": 3,
+    "iterations": 5250000
+  },
+  {
+    "task": 136,
+    "mi": 337500,
+    "worker_index": 0,
+    "iterations": 3375000
+  },
+  {
+    "task": 137,
+    "mi": 105000,
+    "worker_index": 1,
+    "iterations": 1050000
+  },
+  {
+    "task": 138,
+    "mi": 83000,
+    "worker_index": 2,
+    "iterations": 830000
+  },
+  {
+    "task": 139,
+    "mi": 103000,
+    "worker_index": 3,
+    "iterations": 1030000
+  },
+  {
+    "task": 140,
+    "mi": 59000,
+    "worker_index": 0,
+    "iterations": 590000
+  },
+  {
+    "task": 141,
+    "mi": 119000,
+    "worker_index": 1,
+    "iterations": 1190000
+  },
+  {
+    "task": 142,
+    "mi": 125000,
+    "worker_index": 2,
+    "iterations": 1250000
+  },
+  {
+    "task": 143,
+    "mi": 123000,
+    "worker_index": 3,
+    "iterations": 1230000
+  },
+  {
+    "task": 144,
+    "mi": 129000,
+    "worker_index": 0,
+    "iterations": 1290000
+  },
+  {
+    "task": 145,
+    "mi": 125000,
+    "worker_index": 1,
+    "iterations": 1250000
+  },
+  {
+    "task": 146,
+    "mi": 525000,
+    "worker_index": 2,
+    "iterations": 5250000
+  },
+  {
+    "task": 147,
+    "mi": 83000,
+    "worker_index": 3,
+    "iterations": 830000
+  },
+  {
+    "task": 148,
+    "mi": 150000,
+    "worker_index": 0,
+    "iterations": 1500000
+  },
+  {
+    "task": 149,
+    "mi": 119000,
+    "worker_index": 1,
+    "iterations": 1190000
+  },
+  {
+    "task": 150,
+    "mi": 45000,
+    "worker_index": 2,
+    "iterations": 450000
+  },
+  {
+    "task": 151,
+    "mi": 51000,
+    "worker_index": 3,
+    "iterations": 510000
+  },
+  {
+    "task": 152,
+    "mi": 77000,
+    "worker_index": 0,
+    "iterations": 770000
+  },
+  {
+    "task": 153,
+    "mi": 40000,
+    "worker_index": 1,
+    "iterations": 400000
+  },
+  {
+    "task": 154,
+    "mi": 15000,
+    "worker_index": 2,
+    "iterations": 150000
+  },
+  {
+    "task": 155,
+    "mi": 107000,
+    "worker_index": 3,
+    "iterations": 1070000
+  },
+  {
+    "task": 156,
+    "mi": 119000,
+    "worker_index": 0,
+    "iterations": 1190000
+  },
+  {
+    "task": 157,
+    "mi": 900000,
+    "worker_index": 1,
+    "iterations": 9000000
+  },
+  {
+    "task": 158,
+    "mi": 113000,
+    "worker_index": 2,
+    "iterations": 1130000
+  },
+  {
+    "task": 159,
+    "mi": 119000,
+    "worker_index": 3,
+    "iterations": 1190000
+  },
+  {
+    "task": 160,
+    "mi": 67000,
+    "worker_index": 0,
+    "iterations": 670000
+  },
+  {
+    "task": 161,
+    "mi": 111000,
+    "worker_index": 1,
+    "iterations": 1110000
+  },
+  {
+    "task": 162,
+    "mi": 525000,
+    "worker_index": 2,
+    "iterations": 5250000
+  },
+  {
+    "task": 163,
+    "mi": 127000,
+    "worker_index": 3,
+    "iterations": 1270000
+  },
+  {
+    "task": 164,
+    "mi": 121000,
+    "worker_index": 0,
+    "iterations": 1210000
+  },
+  {
+    "task": 165,
+    "mi": 712500,
+    "worker_index": 1,
+    "iterations": 7125000
+  },
+  {
+    "task": 166,
+    "mi": 135000,
+    "worker_index": 2,
+    "iterations": 1350000
+  },
+  {
+    "task": 167,
+    "mi": 109000,
+    "worker_index": 3,
+    "iterations": 1090000
+  },
+  {
+    "task": 168,
+    "mi": 65000,
+    "worker_index": 0,
+    "iterations": 650000
+  },
+  {
+    "task": 169,
+    "mi": 91000,
+    "worker_index": 1,
+    "iterations": 910000
+  },
+  {
+    "task": 170,
+    "mi": 129000,
+    "worker_index": 2,
+    "iterations": 1290000
+  },
+  {
+    "task": 171,
+    "mi": 117000,
+    "worker_index": 3,
+    "iterations": 1170000
+  },
+  {
+    "task": 172,
+    "mi": 900000,
+    "worker_index": 0,
+    "iterations": 9000000
+  },
+  {
+    "task": 173,
+    "mi": 40000,
+    "worker_index": 1,
+    "iterations": 400000
+  },
+  {
+    "task": 174,
+    "mi": 67000,
+    "worker_index": 2,
+    "iterations": 670000
+  },
+  {
+    "task": 175,
+    "mi": 89000,
+    "worker_index": 3,
+    "iterations": 890000
+  },
+  {
+    "task": 176,
+    "mi": 525000,
+    "worker_index": 0,
+    "iterations": 5250000
+  },
+  {
+    "task": 177,
+    "mi": 65000,
+    "worker_index": 1,
+    "iterations": 650000
+  },
+  {
+    "task": 178,
+    "mi": 107000,
+    "worker_index": 2,
+    "iterations": 1070000
+  },
+  {
+    "task": 179,
+    "mi": 127000,
+    "worker_index": 3,
+    "iterations": 1270000
+  },
+  {
+    "task": 180,
+    "mi": 15000,
+    "worker_index": 0,
+    "iterations": 150000
+  },
+  {
+    "task": 181,
+    "mi": 15000,
+    "worker_index": 1,
+    "iterations": 150000
+  },
+  {
+    "task": 182,
+    "mi": 99000,
+    "worker_index": 2,
+    "iterations": 990000
+  },
+  {
+    "task": 183,
+    "mi": 150000,
+    "worker_index": 3,
+    "iterations": 1500000
+  },
+  {
+    "task": 184,
+    "mi": 107000,
+    "worker_index": 0,
+    "iterations": 1070000
+  },
+  {
+    "task": 185,
+    "mi": 111000,
+    "worker_index": 1,
+    "iterations": 1110000
+  },
+  {
+    "task": 186,
+    "mi": 49000,
+    "worker_index": 2,
+    "iterations": 490000
+  },
+  {
+    "task": 187,
+    "mi": 127000,
+    "worker_index": 3,
+    "iterations": 1270000
+  },
+  {
+    "task": 188,
+    "mi": 99000,
+    "worker_index": 0,
+    "iterations": 990000
+  },
+  {
+    "task": 189,
+    "mi": 71000,
+    "worker_index": 1,
+    "iterations": 710000
+  },
+  {
+    "task": 190,
+    "mi": 87000,
+    "worker_index": 2,
+    "iterations": 870000
+  },
+  {
+    "task": 191,
+    "mi": 95000,
+    "worker_index": 3,
+    "iterations": 950000
+  },
+  {
+    "task": 192,
+    "mi": 71000,
+    "worker_index": 0,
+    "iterations": 710000
+  },
+  {
+    "task": 193,
+    "mi": 81000,
+    "worker_index": 1,
+    "iterations": 810000
+  },
+  {
+    "task": 194,
+    "mi": 129000,
+    "worker_index": 2,
+    "iterations": 1290000
+  },
+  {
+    "task": 195,
+    "mi": 93000,
+    "worker_index": 3,
+    "iterations": 930000
+  },
+  {
+    "task": 196,
+    "mi": 40000,
+    "worker_index": 0,
+    "iterations": 400000
+  },
+  {
+    "task": 197,
+    "mi": 337500,
+    "worker_index": 1,
+    "iterations": 3375000
+  },
+  {
+    "task": 198,
+    "mi": 93000,
+    "worker_index": 2,
+    "iterations": 930000
+  },
+  {
+    "task": 199,
+    "mi": 67000,
+    "worker_index": 3,
+    "iterations": 670000
+  },
+  {
+    "task": 200,
+    "mi": 135000,
+    "worker_index": 0,
+    "iterations": 1350000
+  },
+  {
+    "task": 201,
+    "mi": 123000,
+    "worker_index": 1,
+    "iterations": 1230000
+  },
+  {
+    "task": 202,
+    "mi": 125000,
+    "worker_index": 2,
+    "iterations": 1250000
+  },
+  {
+    "task": 203,
+    "mi": 40000,
+    "worker_index": 3,
+    "iterations": 400000
+  },
+  {
+    "task": 204,
+    "mi": 127000,
+    "worker_index": 0,
+    "iterations": 1270000
+  },
+  {
+    "task": 205,
+    "mi": 95000,
+    "worker_index": 1,
+    "iterations": 950000
+  },
+  {
+    "task": 206,
+    "mi": 113000,
+    "worker_index": 2,
+    "iterations": 1130000
+  },
+  {
+    "task": 207,
+    "mi": 85000,
+    "worker_index": 3,
+    "iterations": 850000
+  },
+  {
+    "task": 208,
+    "mi": 75000,
+    "worker_index": 0,
+    "iterations": 750000
+  },
+  {
+    "task": 209,
+    "mi": 109000,
+    "worker_index": 1,
+    "iterations": 1090000
+  },
+  {
+    "task": 210,
+    "mi": 73000,
+    "worker_index": 2,
+    "iterations": 730000
+  },
+  {
+    "task": 211,
+    "mi": 27500,
+    "worker_index": 3,
+    "iterations": 275000
+  },
+  {
+    "task": 212,
+    "mi": 900000,
+    "worker_index": 0,
+    "iterations": 9000000
+  },
+  {
+    "task": 213,
+    "mi": 115000,
+    "worker_index": 1,
+    "iterations": 1150000
+  },
+  {
+    "task": 214,
+    "mi": 105000,
+    "worker_index": 2,
+    "iterations": 1050000
+  },
+  {
+    "task": 215,
+    "mi": 75000,
+    "worker_index": 3,
+    "iterations": 750000
+  },
+  {
+    "task": 216,
+    "mi": 135000,
+    "worker_index": 0,
+    "iterations": 1350000
+  },
+  {
+    "task": 217,
+    "mi": 111000,
+    "worker_index": 1,
+    "iterations": 1110000
+  },
+  {
+    "task": 218,
+    "mi": 81000,
+    "worker_index": 2,
+    "iterations": 810000
+  },
+  {
+    "task": 219,
+    "mi": 109000,
+    "worker_index": 3,
+    "iterations": 1090000
+  },
+  {
+    "task": 220,
+    "mi": 47000,
+    "worker_index": 0,
+    "iterations": 470000
+  },
+  {
+    "task": 221,
+    "mi": 105000,
+    "worker_index": 1,
+    "iterations": 1050000
+  },
+  {
+    "task": 222,
+    "mi": 125000,
+    "worker_index": 2,
+    "iterations": 1250000
+  },
+  {
+    "task": 223,
+    "mi": 115000,
+    "worker_index": 3,
+    "iterations": 1150000
+  },
+  {
+    "task": 224,
+    "mi": 125000,
+    "worker_index": 0,
+    "iterations": 1250000
+  },
+  {
+    "task": 225,
+    "mi": 337500,
+    "worker_index": 1,
+    "iterations": 3375000
+  },
+  {
+    "task": 226,
+    "mi": 117000,
+    "worker_index": 2,
+    "iterations": 1170000
+  },
+  {
+    "task": 227,
+    "mi": 27500,
+    "worker_index": 3,
+    "iterations": 275000
+  },
+  {
+    "task": 228,
+    "mi": 119000,
+    "worker_index": 0,
+    "iterations": 1190000
+  },
+  {
+    "task": 229,
+    "mi": 900000,
+    "worker_index": 1,
+    "iterations": 9000000
+  },
+  {
+    "task": 230,
+    "mi": 135000,
+    "worker_index": 2,
+    "iterations": 1350000
+  },
+  {
+    "task": 231,
+    "mi": 27500,
+    "worker_index": 3,
+    "iterations": 275000
+  },
+  {
+    "task": 232,
+    "mi": 45000,
+    "worker_index": 0,
+    "iterations": 450000
+  },
+  {
+    "task": 233,
+    "mi": 105000,
+    "worker_index": 1,
+    "iterations": 1050000
+  },
+  {
+    "task": 234,
+    "mi": 87000,
+    "worker_index": 2,
+    "iterations": 870000
+  },
+  {
+    "task": 235,
+    "mi": 83000,
+    "worker_index": 3,
+    "iterations": 830000
+  },
+  {
+    "task": 236,
+    "mi": 83000,
+    "worker_index": 0,
+    "iterations": 830000
+  },
+  {
+    "task": 237,
+    "mi": 59000,
+    "worker_index": 1,
+    "iterations": 590000
+  },
+  {
+    "task": 238,
+    "mi": 97000,
+    "worker_index": 2,
+    "iterations": 970000
+  },
+  {
+    "task": 239,
+    "mi": 47000,
+    "worker_index": 3,
+    "iterations": 470000
+  },
+  {
+    "task": 240,
+    "mi": 59000,
+    "worker_index": 0,
+    "iterations": 590000
+  },
+  {
+    "task": 241,
+    "mi": 95000,
+    "worker_index": 1,
+    "iterations": 950000
+  },
+  {
+    "task": 242,
+    "mi": 117000,
+    "worker_index": 2,
+    "iterations": 1170000
+  },
+  {
+    "task": 243,
+    "mi": 67000,
+    "worker_index": 3,
+    "iterations": 670000
+  },
+  {
+    "task": 244,
+    "mi": 525000,
+    "worker_index": 0,
+    "iterations": 5250000
+  },
+  {
+    "task": 245,
+    "mi": 97000,
+    "worker_index": 1,
+    "iterations": 970000
+  },
+  {
+    "task": 246,
+    "mi": 27500,
+    "worker_index": 2,
+    "iterations": 275000
+  },
+  {
+    "task": 247,
+    "mi": 109000,
+    "worker_index": 3,
+    "iterations": 1090000
+  },
+  {
+    "task": 248,
+    "mi": 83000,
+    "worker_index": 0,
+    "iterations": 830000
+  },
+  {
+    "task": 249,
+    "mi": 87000,
+    "worker_index": 1,
+    "iterations": 870000
+  },
+  {
+    "task": 250,
+    "mi": 65000,
+    "worker_index": 2,
+    "iterations": 650000
+  },
+  {
+    "task": 251,
+    "mi": 105000,
+    "worker_index": 3,
+    "iterations": 1050000
+  },
+  {
+    "task": 252,
+    "mi": 525000,
+    "worker_index": 0,
+    "iterations": 5250000
+  },
+  {
+    "task": 253,
+    "mi": 109000,
+    "worker_index": 1,
+    "iterations": 1090000
+  },
+  {
+    "task": 254,
+    "mi": 83000,
+    "worker_index": 2,
+    "iterations": 830000
+  },
+  {
+    "task": 255,
+    "mi": 103000,
+    "worker_index": 3,
+    "iterations": 1030000
+  },
+  {
+    "task": 256,
+    "mi": 87000,
+    "worker_index": 0,
+    "iterations": 870000
+  },
+  {
+    "task": 257,
+    "mi": 105000,
+    "worker_index": 1,
+    "iterations": 1050000
+  },
+  {
+    "task": 258,
+    "mi": 712500,
+    "worker_index": 2,
+    "iterations": 7125000
+  },
+  {
+    "task": 259,
+    "mi": 95000,
+    "worker_index": 3,
+    "iterations": 950000
+  },
+  {
+    "task": 260,
+    "mi": 95000,
+    "worker_index": 0,
+    "iterations": 950000
+  },
+  {
+    "task": 261,
+    "mi": 123000,
+    "worker_index": 1,
+    "iterations": 1230000
+  },
+  {
+    "task": 262,
+    "mi": 115000,
+    "worker_index": 2,
+    "iterations": 1150000
+  },
+  {
+    "task": 263,
+    "mi": 105000,
+    "worker_index": 3,
+    "iterations": 1050000
+  },
+  {
+    "task": 264,
+    "mi": 51000,
+    "worker_index": 0,
+    "iterations": 510000
+  },
+  {
+    "task": 265,
+    "mi": 109000,
+    "worker_index": 1,
+    "iterations": 1090000
+  },
+  {
+    "task": 266,
+    "mi": 129000,
+    "worker_index": 2,
+    "iterations": 1290000
+  },
+  {
+    "task": 267,
+    "mi": 97000,
+    "worker_index": 3,
+    "iterations": 970000
+  },
+  {
+    "task": 268,
+    "mi": 900000,
+    "worker_index": 0,
+    "iterations": 9000000
+  },
+  {
+    "task": 269,
+    "mi": 45000,
+    "worker_index": 1,
+    "iterations": 450000
+  },
+  {
+    "task": 270,
+    "mi": 105000,
+    "worker_index": 2,
+    "iterations": 1050000
+  },
+  {
+    "task": 271,
+    "mi": 97000,
+    "worker_index": 3,
+    "iterations": 970000
+  },
+  {
+    "task": 272,
+    "mi": 129000,
+    "worker_index": 0,
+    "iterations": 1290000
+  },
+  {
+    "task": 273,
+    "mi": 59000,
+    "worker_index": 1,
+    "iterations": 590000
+  },
+  {
+    "task": 274,
+    "mi": 525000,
+    "worker_index": 2,
+    "iterations": 5250000
+  },
+  {
+    "task": 275,
+    "mi": 89000,
+    "worker_index": 3,
+    "iterations": 890000
+  },
+  {
+    "task": 276,
+    "mi": 77000,
+    "worker_index": 0,
+    "iterations": 770000
+  },
+  {
+    "task": 277,
+    "mi": 71000,
+    "worker_index": 1,
+    "iterations": 710000
+  },
+  {
+    "task": 278,
+    "mi": 65000,
+    "worker_index": 2,
+    "iterations": 650000
+  },
+  {
+    "task": 279,
+    "mi": 77000,
+    "worker_index": 3,
+    "iterations": 770000
+  },
+  {
+    "task": 280,
+    "mi": 125000,
+    "worker_index": 0,
+    "iterations": 1250000
+  },
+  {
+    "task": 281,
+    "mi": 117000,
+    "worker_index": 1,
+    "iterations": 1170000
+  },
+  {
+    "task": 282,
+    "mi": 87000,
+    "worker_index": 2,
+    "iterations": 870000
+  },
+  {
+    "task": 283,
+    "mi": 79000,
+    "worker_index": 3,
+    "iterations": 790000
+  },
+  {
+    "task": 284,
+    "mi": 15000,
+    "worker_index": 0,
+    "iterations": 150000
+  },
+  {
+    "task": 285,
+    "mi": 71000,
+    "worker_index": 1,
+    "iterations": 710000
+  },
+  {
+    "task": 286,
+    "mi": 79000,
+    "worker_index": 2,
+    "iterations": 790000
+  },
+  {
+    "task": 287,
+    "mi": 27500,
+    "worker_index": 3,
+    "iterations": 275000
+  },
+  {
+    "task": 288,
+    "mi": 15000,
+    "worker_index": 0,
+    "iterations": 150000
+  },
+  {
+    "task": 289,
+    "mi": 87000,
+    "worker_index": 1,
+    "iterations": 870000
+  },
+  {
+    "task": 290,
+    "mi": 99000,
+    "worker_index": 2,
+    "iterations": 990000
+  },
+  {
+    "task": 291,
+    "mi": 49000,
+    "worker_index": 3,
+    "iterations": 490000
+  },
+  {
+    "task": 292,
+    "mi": 111000,
+    "worker_index": 0,
+    "iterations": 1110000
+  },
+  {
+    "task": 293,
+    "mi": 47000,
+    "worker_index": 1,
+    "iterations": 470000
+  },
+  {
+    "task": 294,
+    "mi": 337500,
+    "worker_index": 2,
+    "iterations": 3375000
+  },
+  {
+    "task": 295,
+    "mi": 79000,
+    "worker_index": 3,
+    "iterations": 790000
+  },
+  {
+    "task": 296,
+    "mi": 337500,
+    "worker_index": 0,
+    "iterations": 3375000
+  },
+  {
+    "task": 297,
+    "mi": 45000,
+    "worker_index": 1,
+    "iterations": 450000
+  },
+  {
+    "task": 298,
+    "mi": 117000,
+    "worker_index": 2,
+    "iterations": 1170000
+  },
+  {
+    "task": 299,
+    "mi": 59000,
+    "worker_index": 3,
+    "iterations": 590000
+  },
+  {
+    "task": 300,
+    "mi": 47000,
+    "worker_index": 0,
+    "iterations": 470000
+  },
+  {
+    "task": 301,
+    "mi": 337500,
+    "worker_index": 1,
+    "iterations": 3375000
+  },
+  {
+    "task": 302,
+    "mi": 89000,
+    "worker_index": 2,
+    "iterations": 890000
+  },
+  {
+    "task": 303,
+    "mi": 79000,
+    "worker_index": 3,
+    "iterations": 790000
+  },
+  {
+    "task": 304,
+    "mi": 61000,
+    "worker_index": 0,
+    "iterations": 610000
+  },
+  {
+    "task": 305,
+    "mi": 79000,
+    "worker_index": 1,
+    "iterations": 790000
+  },
+  {
+    "task": 306,
+    "mi": 63000,
+    "worker_index": 2,
+    "iterations": 630000
+  },
+  {
+    "task": 307,
+    "mi": 150000,
+    "worker_index": 3,
+    "iterations": 1500000
+  },
+  {
+    "task": 308,
+    "mi": 91000,
+    "worker_index": 0,
+    "iterations": 910000
+  },
+  {
+    "task": 309,
+    "mi": 91000,
+    "worker_index": 1,
+    "iterations": 910000
+  },
+  {
+    "task": 310,
+    "mi": 127000,
+    "worker_index": 2,
+    "iterations": 1270000
+  },
+  {
+    "task": 311,
+    "mi": 117000,
+    "worker_index": 3,
+    "iterations": 1170000
+  },
+  {
+    "task": 312,
+    "mi": 77000,
+    "worker_index": 0,
+    "iterations": 770000
+  },
+  {
+    "task": 313,
+    "mi": 67000,
+    "worker_index": 1,
+    "iterations": 670000
+  },
+  {
+    "task": 314,
+    "mi": 337500,
+    "worker_index": 2,
+    "iterations": 3375000
+  },
+  {
+    "task": 315,
+    "mi": 103000,
+    "worker_index": 3,
+    "iterations": 1030000
+  },
+  {
+    "task": 316,
+    "mi": 15000,
+    "worker_index": 0,
+    "iterations": 150000
+  },
+  {
+    "task": 317,
+    "mi": 95000,
+    "worker_index": 1,
+    "iterations": 950000
+  },
+  {
+    "task": 318,
+    "mi": 61000,
+    "worker_index": 2,
+    "iterations": 610000
+  },
+  {
+    "task": 319,
+    "mi": 40000,
+    "worker_index": 3,
+    "iterations": 400000
+  },
+  {
+    "task": 320,
+    "mi": 121000,
+    "worker_index": 0,
+    "iterations": 1210000
+  },
+  {
+    "task": 321,
+    "mi": 525000,
+    "worker_index": 1,
+    "iterations": 5250000
+  },
+  {
+    "task": 322,
+    "mi": 93000,
+    "worker_index": 2,
+    "iterations": 930000
+  },
+  {
+    "task": 323,
+    "mi": 91000,
+    "worker_index": 3,
+    "iterations": 910000
+  },
+  {
+    "task": 324,
+    "mi": 93000,
+    "worker_index": 0,
+    "iterations": 930000
+  },
+  {
+    "task": 325,
+    "mi": 101000,
+    "worker_index": 1,
+    "iterations": 1010000
+  },
+  {
+    "task": 326,
+    "mi": 99000,
+    "worker_index": 2,
+    "iterations": 990000
+  },
+  {
+    "task": 327,
+    "mi": 89000,
+    "worker_index": 3,
+    "iterations": 890000
+  },
+  {
+    "task": 328,
+    "mi": 83000,
+    "worker_index": 0,
+    "iterations": 830000
+  },
+  {
+    "task": 329,
+    "mi": 115000,
+    "worker_index": 1,
+    "iterations": 1150000
+  },
+  {
+    "task": 330,
+    "mi": 83000,
+    "worker_index": 2,
+    "iterations": 830000
+  },
+  {
+    "task": 331,
+    "mi": 121000,
+    "worker_index": 3,
+    "iterations": 1210000
+  },
+  {
+    "task": 332,
+    "mi": 101000,
+    "worker_index": 0,
+    "iterations": 1010000
+  },
+  {
+    "task": 333,
+    "mi": 55000,
+    "worker_index": 1,
+    "iterations": 550000
+  },
+  {
+    "task": 334,
+    "mi": 93000,
+    "worker_index": 2,
+    "iterations": 930000
+  },
+  {
+    "task": 335,
+    "mi": 89000,
+    "worker_index": 3,
+    "iterations": 890000
+  },
+  {
+    "task": 336,
+    "mi": 75000,
+    "worker_index": 0,
+    "iterations": 750000
+  },
+  {
+    "task": 337,
+    "mi": 105000,
+    "worker_index": 1,
+    "iterations": 1050000
+  },
+  {
+    "task": 338,
+    "mi": 75000,
+    "worker_index": 2,
+    "iterations": 750000
+  },
+  {
+    "task": 339,
+    "mi": 75000,
+    "worker_index": 3,
+    "iterations": 750000
+  },
+  {
+    "task": 340,
+    "mi": 63000,
+    "worker_index": 0,
+    "iterations": 630000
+  },
+  {
+    "task": 341,
+    "mi": 121000,
+    "worker_index": 1,
+    "iterations": 1210000
+  },
+  {
+    "task": 342,
+    "mi": 27500,
+    "worker_index": 2,
+    "iterations": 275000
+  },
+  {
+    "task": 343,
+    "mi": 103000,
+    "worker_index": 3,
+    "iterations": 1030000
+  },
+  {
+    "task": 344,
+    "mi": 47000,
+    "worker_index": 0,
+    "iterations": 470000
+  },
+  {
+    "task": 345,
+    "mi": 117000,
+    "worker_index": 1,
+    "iterations": 1170000
+  },
+  {
+    "task": 346,
+    "mi": 150000,
+    "worker_index": 2,
+    "iterations": 1500000
+  },
+  {
+    "task": 347,
+    "mi": 67000,
+    "worker_index": 3,
+    "iterations": 670000
+  },
+  {
+    "task": 348,
+    "mi": 123000,
+    "worker_index": 0,
+    "iterations": 1230000
+  },
+  {
+    "task": 349,
+    "mi": 91000,
+    "worker_index": 1,
+    "iterations": 910000
+  },
+  {
+    "task": 350,
+    "mi": 111000,
+    "worker_index": 2,
+    "iterations": 1110000
+  },
+  {
+    "task": 351,
+    "mi": 63000,
+    "worker_index": 3,
+    "iterations": 630000
+  },
+  {
+    "task": 352,
+    "mi": 105000,
+    "worker_index": 0,
+    "iterations": 1050000
+  },
+  {
+    "task": 353,
+    "mi": 59000,
+    "worker_index": 1,
+    "iterations": 590000
+  },
+  {
+    "task": 354,
+    "mi": 150000,
+    "worker_index": 2,
+    "iterations": 1500000
+  },
+  {
+    "task": 355,
+    "mi": 63000,
+    "worker_index": 3,
+    "iterations": 630000
+  },
+  {
+    "task": 356,
+    "mi": 150000,
+    "worker_index": 0,
+    "iterations": 1500000
+  },
+  {
+    "task": 357,
+    "mi": 525000,
+    "worker_index": 1,
+    "iterations": 5250000
+  },
+  {
+    "task": 358,
+    "mi": 51000,
+    "worker_index": 2,
+    "iterations": 510000
+  },
+  {
+    "task": 359,
+    "mi": 81000,
+    "worker_index": 3,
+    "iterations": 810000
+  },
+  {
+    "task": 360,
+    "mi": 89000,
+    "worker_index": 0,
+    "iterations": 890000
+  },
+  {
+    "task": 361,
+    "mi": 63000,
+    "worker_index": 1,
+    "iterations": 630000
+  },
+  {
+    "task": 362,
+    "mi": 47000,
+    "worker_index": 2,
+    "iterations": 470000
+  },
+  {
+    "task": 363,
+    "mi": 81000,
+    "worker_index": 3,
+    "iterations": 810000
+  },
+  {
+    "task": 364,
+    "mi": 51000,
+    "worker_index": 0,
+    "iterations": 510000
+  },
+  {
+    "task": 365,
+    "mi": 81000,
+    "worker_index": 1,
+    "iterations": 810000
+  },
+  {
+    "task": 366,
+    "mi": 135000,
+    "worker_index": 2,
+    "iterations": 1350000
+  },
+  {
+    "task": 367,
+    "mi": 121000,
+    "worker_index": 3,
+    "iterations": 1210000
+  },
+  {
+    "task": 368,
+    "mi": 900000,
+    "worker_index": 0,
+    "iterations": 9000000
+  },
+  {
+    "task": 369,
+    "mi": 150000,
+    "worker_index": 1,
+    "iterations": 1500000
+  },
+  {
+    "task": 370,
+    "mi": 61000,
+    "worker_index": 2,
+    "iterations": 610000
+  },
+  {
+    "task": 371,
+    "mi": 900000,
+    "worker_index": 3,
+    "iterations": 9000000
+  },
+  {
+    "task": 372,
+    "mi": 71000,
+    "worker_index": 0,
+    "iterations": 710000
+  },
+  {
+    "task": 373,
+    "mi": 15000,
+    "worker_index": 1,
+    "iterations": 150000
+  },
+  {
+    "task": 374,
+    "mi": 125000,
+    "worker_index": 2,
+    "iterations": 1250000
+  },
+  {
+    "task": 375,
+    "mi": 91000,
+    "worker_index": 3,
+    "iterations": 910000
+  },
+  {
+    "task": 376,
+    "mi": 135000,
+    "worker_index": 0,
+    "iterations": 1350000
+  },
+  {
+    "task": 377,
+    "mi": 81000,
+    "worker_index": 1,
+    "iterations": 810000
+  },
+  {
+    "task": 378,
+    "mi": 113000,
+    "worker_index": 2,
+    "iterations": 1130000
+  },
+  {
+    "task": 379,
+    "mi": 113000,
+    "worker_index": 3,
+    "iterations": 1130000
+  },
+  {
+    "task": 380,
+    "mi": 337500,
+    "worker_index": 0,
+    "iterations": 3375000
+  },
+  {
+    "task": 381,
+    "mi": 101000,
+    "worker_index": 1,
+    "iterations": 1010000
+  },
+  {
+    "task": 382,
+    "mi": 85000,
+    "worker_index": 2,
+    "iterations": 850000
+  },
+  {
+    "task": 383,
+    "mi": 79000,
+    "worker_index": 3,
+    "iterations": 790000
+  },
+  {
+    "task": 384,
+    "mi": 61000,
+    "worker_index": 0,
+    "iterations": 610000
+  },
+  {
+    "task": 385,
+    "mi": 101000,
+    "worker_index": 1,
+    "iterations": 1010000
+  },
+  {
+    "task": 386,
+    "mi": 115000,
+    "worker_index": 2,
+    "iterations": 1150000
+  },
+  {
+    "task": 387,
+    "mi": 97000,
+    "worker_index": 3,
+    "iterations": 970000
+  },
+  {
+    "task": 388,
+    "mi": 59000,
+    "worker_index": 0,
+    "iterations": 590000
+  },
+  {
+    "task": 389,
+    "mi": 87000,
+    "worker_index": 1,
+    "iterations": 870000
+  },
+  {
+    "task": 390,
+    "mi": 337500,
+    "worker_index": 2,
+    "iterations": 3375000
+  },
+  {
+    "task": 391,
+    "mi": 101000,
+    "worker_index": 3,
+    "iterations": 1010000
+  },
+  {
+    "task": 392,
+    "mi": 73000,
+    "worker_index": 0,
+    "iterations": 730000
+  },
+  {
+    "task": 393,
+    "mi": 115000,
+    "worker_index": 1,
+    "iterations": 1150000
+  },
+  {
+    "task": 394,
+    "mi": 71000,
+    "worker_index": 2,
+    "iterations": 710000
+  },
+  {
+    "task": 395,
+    "mi": 97000,
+    "worker_index": 3,
+    "iterations": 970000
+  },
+  {
+    "task": 396,
+    "mi": 121000,
+    "worker_index": 0,
+    "iterations": 1210000
+  },
+  {
+    "task": 397,
+    "mi": 95000,
+    "worker_index": 1,
+    "iterations": 950000
+  },
+  {
+    "task": 398,
+    "mi": 87000,
+    "worker_index": 2,
+    "iterations": 870000
+  },
+  {
+    "task": 399,
+    "mi": 55000,
+    "worker_index": 3,
+    "iterations": 550000
+  }
+]

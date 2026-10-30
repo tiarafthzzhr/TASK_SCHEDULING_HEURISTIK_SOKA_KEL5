@@ -1,0 +1,13 @@
+{
+  "algorithm": "RR",
+  "mode": "real-kubernetes-exec",
+  "dataset": "GoCJ_Dataset_450.txt",
+  "dataset_tasks": 450,
+  "dataset_sha256": "b318c4852d52b6100d0cb04db871baba5648958bdcbea81ccb7696f1108f200c",
+  "tasks": 450,
+  "failed": 0,
+  "makespan_s": 159.24890918200072,
+  "average_wait_s": 79.042877054436,
+  "task_cpu_utilization_pct": 56.45412608965069,
+  "iterations_per_mi": 10
+}

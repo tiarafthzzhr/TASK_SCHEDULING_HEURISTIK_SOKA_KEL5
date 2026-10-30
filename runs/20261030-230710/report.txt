@@ -1,0 +1,39 @@
+==================================================================================
+                      HASIL EKSEKUSI REAL WORLD - KUBERNETES                      
+==================================================================================
+  Algoritma                   : Round Robin (RR) - heuristik
+  Cluster                     : soka-local
+  Dataset                     : GoCJ_Dataset_200.txt
+  Status                      : BERHASIL
+
+RINGKASAN TASK
+----------------------------------------------------------------------------------
+  Total task                  : 200
+  Selesai / gagal             : 200 / 0
+  Makespan                    : 78.396 detik
+  Rata-rata waktu tunggu      : 38.183 detik
+  Utilisasi CPU task          : 56.35 %
+  Skala iterasi per MI        : 10
+
+PEMBAGIAN TASK PADA WORKER
+----------------------------------------------------------------------------------
+  NODE                       POD                 TASK   SELESAI   GAGAL
+----------------------------------------------------------------------------------
+  soka-local-worker          rr-worker-0           50        50       0
+  soka-local-worker          rr-worker-1           50        50       0
+  soka-local-worker2         rr-worker-2           50        50       0
+  soka-local-worker2         rr-worker-3           50        50       0
+
+TOPOLOGI
+----------------------------------------------------------------------------------
+  1 cluster -> 2 worker node -> 2 pod per worker (total 4 pod)
+  1 control-plane tambahan untuk pengelolaan cluster.
+  Node kind berupa container; pod bukan VM.
+
+FILE HASIL
+----------------------------------------------------------------------------------
+  Folder : C:\Users\TIARA F.A\soka-taskscheduling1\TASK_SCHEDULING_HEURISTIK_SOKA_KEL5\runs\20261030-230710
+  File   : report.txt, summary.json, tasks.csv, topology.json, plan.json
+
+  Makespan termasuk overhead kubectl; CPU task bukan utilisasi laptop.
+==================================================================================

@@ -31,6 +31,13 @@ def command(args, source=None, timeout=120):
 
 
 def kubectl(*args, source=None, timeout=120):
+    if MODE == "kind":
+        # Docker Desktop + WSL mirrored networking may break the published API port.
+        # Use the same healthy API through its node-local admin kubeconfig instead.
+        prefix = ["docker", "exec"] + (["-i"] if source is not None else [])
+        return command([*prefix, CLUSTER + "-control-plane", "kubectl",
+                        "--kubeconfig=/etc/kubernetes/admin.conf", "--namespace", NAMESPACE, *args],
+                       source, timeout)
     # Never mutate or execute against the user's unrelated current context.
     selection = [] if os.environ.get("SOKA_IN_CLUSTER") == "1" else ["--context", CONTEXT]
     if MODE == "k3s" and not selection and not os.environ.get("KUBERNETES_SERVICE_HOST"):
@@ -205,11 +212,16 @@ def setup():
         print_topology(verify(inventory()))
         return
     command(["docker", "info"], timeout=30)
+    kubeconfig = Path(__file__).resolve().parent / ".kube" / "kind.yaml"
+    kubeconfig.parent.mkdir(parents=True, exist_ok=True)
     clusters = command(["kind", "get", "clusters"]).splitlines()
     if CLUSTER not in clusters:
         print("Membuat cluster kind; download image pertama dapat memerlukan beberapa menit.", flush=True)
         command(["kind", "create", "cluster", "--name", CLUSTER, "--config",
-                 str(Path(__file__).parent / "kubernetes" / "kind.yaml"), "--wait", "180s"], timeout=900)
+                 str(Path(__file__).parent / "kubernetes" / "kind.yaml"),
+                 "--kubeconfig", str(kubeconfig), "--wait", "180s"], timeout=900)
+    command(["kind", "export", "kubeconfig", "--name", CLUSTER, "--kubeconfig", str(kubeconfig)])
+    os.environ["KUBECONFIG"] = str(kubeconfig)
     # Check this is our two-node worker layout before applying resources.
     nodes = json.loads(kubectl("get", "nodes", "-o", "json"))["items"]
     for host in ("host1", "host2"):
@@ -223,11 +235,14 @@ def setup():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["setup", "verify"])
+    parser.add_argument("action", choices=["setup", "verify", "inspect"])
     args = parser.parse_args()
     try:
         if args.action == "setup":
             setup()
+        elif args.action == "inspect":
+            print(kubectl("get", "nodes", "-o", "wide"))
+            print(kubectl("get", "pods", "-o", "wide"))
         else:
             print_topology(verify(inventory()))
     except (RuntimeError, ValueError, subprocess.TimeoutExpired) as exc:
