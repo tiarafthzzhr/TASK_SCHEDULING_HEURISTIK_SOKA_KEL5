@@ -1,0 +1,134 @@
+{
+  "source_folder": "GoCJ Google Cloud Jobs Dataset",
+  "files": [
+    {
+      "file": "GoCJ Java Generator.txt",
+      "bytes": 1826,
+      "sha256": "33753c8df5bd0b0907ff20a9bab24a771e9a4fc92e016beb117cff4ea00fdfd1"
+    },
+    {
+      "file": "GoCJ_Dataset_100.txt",
+      "bytes": 739,
+      "sha256": "56f388ec57097229b86dee2dc70784f1fc1a8d7376aa98e5fc3efb3ca7a53a3e",
+      "tasks": 100
+    },
+    {
+      "file": "GoCJ_Dataset_1000.txt",
+      "bytes": 7413,
+      "sha256": "a4a3fa564c4407a950360650103883434de88234fc51de39ac46e85ebbd98628",
+      "tasks": 1000
+    },
+    {
+      "file": "GoCJ_Dataset_150.txt",
+      "bytes": 1118,
+      "sha256": "1eaa8661d74760bdfaab41ecd92e666998720ca0cabf5d0d3acaa782917ed6d9",
+      "tasks": 150
+    },
+    {
+      "file": "GoCJ_Dataset_200.txt",
+      "bytes": 1481,
+      "sha256": "b010ae9738eefede885c676b60562422258a904d745be5666571af39c1d3d955",
+      "tasks": 200
+    },
+    {
+      "file": "GoCJ_Dataset_250.txt",
+      "bytes": 1847,
+      "sha256": "c9022cac95c4ea712a9b720eccb9e1452160b25e16ef18b37cb05e697eaba6ff",
+      "tasks": 250
+    },
+    {
+      "file": "GoCJ_Dataset_300.txt",
+      "bytes": 2223,
+      "sha256": "f86f79d9264f1eb4064f77d23a164dbfe4dfa6330d0c354714f3b4c2eda48eb9",
+      "tasks": 300
+    },
+    {
+      "file": "GoCJ_Dataset_350.txt",
+      "bytes": 2607,
+      "sha256": "59be5dc21ac8c9db93a243adac6d73688132911cd0239a258f50c1474870e353",
+      "tasks": 350
+    },
+    {
+      "file": "GoCJ_Dataset_400.txt",
+      "bytes": 2978,
+      "sha256": "6589d62b19ca36216d641486703826582bfeff99728726f80ebbc14eaf1fb741",
+      "tasks": 400
+    },
+    {
+      "file": "GoCJ_Dataset_450.txt",
+      "bytes": 3331,
+      "sha256": "b318c4852d52b6100d0cb04db871baba5648958bdcbea81ccb7696f1108f200c",
+      "tasks": 450
+    },
+    {
+      "file": "GoCJ_Dataset_500.txt",
+      "bytes": 3711,
+      "sha256": "c2792fce2695fa822ed73976dec88c3d1b7a97d24d9440d1063ac04428299617",
+      "tasks": 500
+    },
+    {
+      "file": "GoCJ_Dataset_550.txt",
+      "bytes": 4074,
+      "sha256": "31e3c3cbf08abaaee34155115319261578ac7ac8e0a21255fc1217cec0c4dd1b",
+      "tasks": 550
+    },
+    {
+      "file": "GoCJ_Dataset_600.txt",
+      "bytes": 4455,
+      "sha256": "6369fd20e97bcdb99d101fd96dfa1a509a952ee4044cbb42e5af70a04e4ca45e",
+      "tasks": 600
+    },
+    {
+      "file": "GoCJ_Dataset_650.txt",
+      "bytes": 4837,
+      "sha256": "6cb18551677bd63d56102dc33f1b1ede8e61bb66ad8c014f33807050d320aee0",
+      "tasks": 650
+    },
+    {
+      "file": "GoCJ_Dataset_700.txt",
+      "bytes": 5189,
+      "sha256": "8a12bd3f5d7618018c844e9cac436a012b6bf0eaeb8b19946fba93440e309c6e",
+      "tasks": 700
+    },
+    {
+      "file": "GoCJ_Dataset_750.txt",
+      "bytes": 5569,
+      "sha256": "88ddca1c3cf4d317ade07167f2dc9e60d7feea6b24e606ed50f65a7f1a6c1ce5",
+      "tasks": 750
+    },
+    {
+      "file": "GoCJ_Dataset_800.txt",
+      "bytes": 5925,
+      "sha256": "2bf8dad3d87523e710998e270c59044bafe97c46d378eedd3eed865ddb68386e",
+      "tasks": 800
+    },
+    {
+      "file": "GoCJ_Dataset_850.txt",
+      "bytes": 6287,
+      "sha256": "dae06026891a2202beaeabd3f2433e5eb8ed4ef8db2a758aacb2a3751122bb6b",
+      "tasks": 850
+    },
+    {
+      "file": "GoCJ_Dataset_900.txt",
+      "bytes": 6698,
+      "sha256": "4525a5589a326006aba758218aebd336813bc535caf2880f789735e0d3e038d3",
+      "tasks": 900
+    },
+    {
+      "file": "GoCJ_Dataset_950.txt",
+      "bytes": 7072,
+      "sha256": "b394913787252373ac3798227799983a50f665811a6cc172d3e07d8c0f719d35",
+      "tasks": 950
+    },
+    {
+      "file": "GoCJ_DataSet_Monte_Carlo.xlsx",
+      "bytes": 1254481,
+      "sha256": "30f664f8e005d6866e3b942c6f55b88080314ed7f032b7d64421fa318ba78561"
+    },
+    {
+      "file": "Original_DataSet.txt",
+      "bytes": 369,
+      "sha256": "9b41180a7882b8b08d8a0e6fe7510ef889a75b0cb969cec795d4534d73581d63"
+    }
+  ]
+}
