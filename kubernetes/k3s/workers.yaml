@@ -1,0 +1,151 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: soka-heuristik
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    name: rr-worker-0
+    namespace: soka-heuristik
+    labels:
+      app: rr-worker
+  spec:
+    nodeSelector:
+      soka.lab/host: host1
+    automountServiceAccountToken: false
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: 10001
+      runAsGroup: 10001
+    containers:
+    - name: worker
+      image: soka-task-scheduler:v1
+      imagePullPolicy: Never
+      command:
+      - python3
+      - -c
+      - import time; time.sleep(10**9)
+      resources:
+        requests:
+          cpu: 100m
+          memory: 32Mi
+        limits:
+          cpu: '1'
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop:
+          - ALL
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    name: rr-worker-1
+    namespace: soka-heuristik
+    labels:
+      app: rr-worker
+  spec:
+    nodeSelector:
+      soka.lab/host: host1
+    automountServiceAccountToken: false
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: 10001
+      runAsGroup: 10001
+    containers:
+    - name: worker
+      image: soka-task-scheduler:v1
+      imagePullPolicy: Never
+      command:
+      - python3
+      - -c
+      - import time; time.sleep(10**9)
+      resources:
+        requests:
+          cpu: 100m
+          memory: 32Mi
+        limits:
+          cpu: '1'
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop:
+          - ALL
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    name: rr-worker-2
+    namespace: soka-heuristik
+    labels:
+      app: rr-worker
+  spec:
+    nodeSelector:
+      soka.lab/host: host2
+    automountServiceAccountToken: false
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: 10001
+      runAsGroup: 10001
+    containers:
+    - name: worker
+      image: soka-task-scheduler:v1
+      imagePullPolicy: Never
+      command:
+      - python3
+      - -c
+      - import time; time.sleep(10**9)
+      resources:
+        requests:
+          cpu: 100m
+          memory: 32Mi
+        limits:
+          cpu: '1'
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop:
+          - ALL
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    name: rr-worker-3
+    namespace: soka-heuristik
+    labels:
+      app: rr-worker
+  spec:
+    nodeSelector:
+      soka.lab/host: host2
+    automountServiceAccountToken: false
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: 10001
+      runAsGroup: 10001
+    containers:
+    - name: worker
+      image: soka-task-scheduler:v1
+      imagePullPolicy: Never
+      command:
+      - python3
+      - -c
+      - import time; time.sleep(10**9)
+      resources:
+        requests:
+          cpu: 100m
+          memory: 32Mi
+        limits:
+          cpu: '1'
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop:
+          - ALL

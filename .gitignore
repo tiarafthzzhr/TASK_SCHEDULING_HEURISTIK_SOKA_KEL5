@@ -9,3 +9,8 @@ __pycache__/
 *.pem
 *.key
 .vscode/
+*.tar
+*.tar.gz
+*.kubeconfig
+*node-token*
+*cluster-token*

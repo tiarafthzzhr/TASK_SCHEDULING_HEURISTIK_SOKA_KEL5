@@ -5,6 +5,7 @@ import csv
 import hashlib
 import json
 import math
+import os
 import subprocess
 from pathlib import Path
 import time
@@ -27,7 +28,7 @@ def main():
     parser.add_argument("--dataset-size", type=int, choices=range(100, 1001, 50), default=100)
     parser.add_argument("--tasks", type=int, help="Optional subset; default executes the entire selected dataset")
     parser.add_argument("--iterations-per-mi", type=float, default=10)
-    parser.add_argument("--output", default=str(BASE / "runs" / time.strftime("%Y%m%d-%H%M%S")))
+    parser.add_argument("--output", default=str(Path(os.environ.get("SOKA_OUTPUT_ROOT", BASE / "runs")) / time.strftime("%Y%m%d-%H%M%S")))
     args = parser.parse_args()
     data = kube.inventory()
     if args.mode == "verify":

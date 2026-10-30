@@ -1,164 +1,119 @@
-# Task Scheduling Heuristik - Kelompok 5
+﻿# Task Scheduling Heuristik - Kubernetes Dua Laptop
 
-Implementasi **Round Robin (RR)** pada Kubernetes lokal memakai **Docker Desktop + Ubuntu WSL 2 + kind**. Task CPU benar-benar dijalankan dalam empat pod Python pada satu laptop.
+Implementasi **Round Robin (RR)** pada **K3s + Docker Engine native di Ubuntu WSL 2**, dengan dua laptop Windows fisik di jaringan Wi-Fi yang mengizinkan komunikasi antar-client. Seluruh dataset GoCJ sebelumnya tetap disertakan tanpa perubahan.
 
-Repository tujuan: [TASK_SCHEDULING_HEURISTIK_SOKA_KEL5](https://github.com/tiarafthzzhr/TASK_SCHEDULING_HEURISTIK_SOKA_KEL5).
-
-## Arsitektur
+## Arsitektur aktif
 
 ```text
-1 cluster: soka-local
-+-- soka-local-control-plane       pengelolaan Kubernetes
-+-- soka-local-worker
-|   +-- rr-worker-0                task 0, 4, 8, ...
-|   +-- rr-worker-1                task 1, 5, 9, ...
-+-- soka-local-worker2
-    +-- rr-worker-2                task 2, 6, 10, ...
-    +-- rr-worker-3                task 3, 7, 11, ...
+1 cluster K3s
++-- Laptop 1: soka-master
+|   +-- Control-plane (juga menerima workload)
+|   +-- rr-worker-0 dan rr-worker-1
+|   +-- Job scheduler RR
+|   +-- Web hasil pada NodePort 30080
++-- Laptop 2: soka-worker
+    +-- rr-worker-2 dan rr-worker-3
 ```
 
-**1 cluster -> 2 worker node -> masing-masing 2 pod**, ditambah 1 control-plane. Total tiga node Kubernetes. Node kind berupa container dan pod bukan VM. Sebutkan sebagai lab Kubernetes lokal satu laptop; interpretasi syarat host/VM pada tugas perlu sesuai persetujuan dosen.
+Ada **dua node K3s dan empat pod komputasi**, dengan Job controller dan Deployment hasil sebagai workload tambahan. Pod bukan VM. WSL 2 memakai virtualisasi bawaan Windows, tetapi tidak membutuhkan VirtualBox atau VM yang dikelola lewat Hyper-V Manager.
 
-## Alur kerja
+**Status:** implementasi, Dockerfile, manifest dan pengujian kode tersedia. Deployment lintas dua laptop serta akses Wi-Fi kampus **belum diverifikasi**. Keberhasilan lab kind satu laptop sebelumnya tidak membuktikan topologi dua laptop ini sudah berjalan.
 
-1. Docker Desktop menyediakan container node melalui backend WSL 2.
-2. kind membuat cluster dan Kubernetes menempatkan dua pod pada setiap worker node melalui nodeSelector.
-3. Scheduler memeriksa node Ready, pod Running/Ready, node aktual dan UID pod.
-4. Dataset GoCJ dibaca dan task dipetakan menggunakan `worker_index = task_index % 4`.
-5. Controller Python mengirim task melalui kubectl exec. Antrean setiap pod serial, empat antrean berjalan paralel.
-6. Worker menjalankan SHA-256 berulang, lalu mengembalikan checksum, CPU time dan wall time.
-7. Scheduler menyimpan hasil dan menampilkan tabel ringkasan.
+## Mulai dari sini
 
-Kubernetes menempatkan pod; RR proyek membagi task ke pod. Ini bukan penggantian scheduler internal Kubernetes. Lihat [diagram dan alur demonstrasi](docs/alur-kubernetes.md).
+Ikuti [panduan lengkap K3s dua laptop](docs/K3S-DUA-LAPTOP.md) secara berurutan. Setiap langkah menjelaskan terminal dan laptop tempat perintah dijalankan.
 
-## Persiapan pertama
+1. Catat versi Windows/WSL dan IP Wi-Fi aktual kedua laptop.
+2. Aktifkan WSL mirrored networking dan systemd tanpa menimpa konfigurasi lain.
+3. Siapkan Docker Engine native di Ubuntu masing-masing; jangan mencampurnya dengan integrasi daemon Docker Desktop pada distro yang sama.
+4. Buka firewall terbatas, lalu **uji TCP dan UDP dua arah**. Jika gagal, berhenti sebelum memasang/join K3s.
+5. Pasang server K3s pada laptop 1 dan agent dengan versi sama pada laptop 2.
+6. Build image, salin tar dan load image pada Docker Engine **kedua laptop**.
+7. Buat empat worker, terapkan layanan hasil dan jalankan Job RR.
+8. Akses hasil dari perangkat lain pada `http://IP_WIFI_LAPTOP_1:30080/`.
 
-Prasyarat: Docker Desktop aktif dengan WSL 2 based engine, integrasi distro Ubuntu aktif, Python 3.10+ tersedia di Ubuntu. Kubernetes bawaan Docker Desktop tidak perlu diaktifkan. Seluruh perintah Python/kubectl memakai Ubuntu WSL yang sama, bukan kubeconfig Windows.
+Wi-Fi kampus mungkin menerapkan isolasi client. Tidak ada konfigurasi aplikasi yang dapat menjamin akses jika kebijakan jaringan memblokir komunikasi tersebut. Netsh portproxy hanya meneruskan TCP dan tidak menggantikan kebutuhan UDP Flannel.
 
-Buka PowerShell pada folder repository yang berisi file ini, lalu jalankan:
+## Eksekusi setelah cluster siap
 
-```powershell
-.\run-kubernetes.ps1 -Mode setup
-```
-
-Installer mengunduh kind v0.33.0 dan kubectl v1.37.0 dengan pemeriksaan SHA-256 ke `.tools/kubernetes-bin/`, tanpa sudo. Setup awal membutuhkan internet untuk image Kubernetes dan Python. Setup tidak menghapus cluster yang sudah ada. Jika layout cluster berbeda, proses dihentikan sebelum menerapkan resource.
-
-Jika kubectl Linux belum tersedia, ikuti [panduan instalasi kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
-
-## Menjalankan task
-
-Docker Desktop harus tetap aktif. Dari PowerShell pada folder repository:
-
-```powershell
-# Verifikasi topologi
-.\run-kubernetes.ps1 -Mode verify
-
-# Lihat rencana delapan task, tanpa eksekusi
-.\run-kubernetes.ps1 -Mode plan -Tasks 8
-
-# Jalankan seluruh dataset 100 task
-.\run-kubernetes.ps1
-```
-
-Seluruh dataset lama disertakan: 19 ukuran dari 100 sampai 1000 task (kelipatan 50). Workbook Monte Carlo, dataset original dan generator historis juga dibawa tanpa perubahan. Default menjalankan seluruh 100 task, bukan hanya 20 task contoh.
-
-```powershell
-# Seluruh 1000 task dari file dataset 1000, bukan potongan dataset 100
-.\run-kubernetes.ps1 -DatasetSize 1000
-
-# Semua 19 dataset dijalankan berurutan (10.450 task total)
-.\run-kubernetes.ps1 -AllDatasets
-
-# Contoh kecil: hanya 20 task pertama dataset 100
-.\run-kubernetes.ps1 -DatasetSize 100 -Tasks 20
-```
-
-Setiap dataset menghasilkan folder run terpisah. Rangkaian berhenti jika satu run gagal. Eksekusi seluruh dataset dapat memerlukan waktu lama; tidak dijalankan otomatis saat penyalinan file.
-
-Jika script diblokir PowerShell:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\run-kubernetes.ps1
-```
-
-Alternatif dari Ubuntu WSL, setelah masuk folder repository:
+Di Ubuntu laptop 1, dari folder repository, dengan kubeconfig yang sudah disiapkan menurut panduan:
 
 ```bash
-python3 kubernetes/install_kind.py
+export KUBECONFIG="$PWD/.kube/k3s.yaml"
+export SOKA_CLUSTER_MODE=k3s
+export SOKA_KUBE_CONTEXT=default
 python3 kube_backend.py setup
-python3 scheduler.py verify
-python3 scheduler.py run --dataset-size 1000 --iterations-per-mi 10
+kubectl apply -f kubernetes/k3s/application.yaml
+kubectl -n soka-heuristik rollout status deployment/rr-results --timeout=180s
+python3 scripts/submit_experiment.py --dataset-size 100
 ```
 
-Gunakan path lokal milikmu saat membuka repository. Script PowerShell memakai lokasinya sendiri untuk masuk ke folder yang benar; tidak memerlukan path laptop pembuat proyek.
+Untuk seluruh 19 dataset asli (10.450 task total) secara berurutan:
 
-## Task dan sumber daya
+```bash
+python3 scripts/submit_experiment.py --all-datasets
+```
 
-Panjang task berasal dari [GoCJ dataset](data/README.md), lalu dikalikan iterations-per-mi untuk menentukan jumlah iterasi hash. Skala default 10. Nilai MI bukan pengukuran instruksi CPU nyata dan bukan eksekusi pekerjaan asli Google.
-
-Setiap pod memakai satu container non-root, request CPU 100m/RAM 32Mi, limit CPU 1/RAM 128Mi. Node dan pod berbagi hardware laptop; limit bukan reservasi core fisik. Image worker memakai tag python:3.12-slim; catat imageID jika membutuhkan reproduksi versi image.
-
-Jangan menjalankan dua scheduler bersamaan pada pod yang sama. Jika pod diganti, UID yang berubah ditolak sebelum task berikutnya. Tidak ada pengalihan task otomatis. Run dengan task gagal keluar dengan exit code 1 dan tetap mencatat hasil. Timeout task satu jam; berhentinya kubectl tidak menjamin proses remote sudah berhenti, jadi periksa pod sebelum mengulang run timeout.
-
-## Hasil dan pengukuran
-
-Setiap run membuat folder `runs/<timestamp>/`:
-
-| File | Isi |
-|---|---|
-| report.txt | Laporan rapi seperti output terminal |
-| tasks.csv | Task, worker_index, pod, node, UID, checksum, waktu dan status |
-| summary.json | Metrik, jumlah kegagalan, nama/ukuran dataset dan SHA-256 sumber |
-| topology.json | Node dan placement pod hasil verifikasi API |
-| plan.json | Pemetaan RR dan ukuran pekerjaan |
-
-Makespan mencakup overhead kubectl. Waiting time diukur sampai pemanggilan kubectl task. Task CPU utilization membandingkan CPU time worker dengan kapasitas waktu empat limit CPU pod, bukan total utilisasi laptop. Jangan memakai run gagal sebagai pembanding kinerja karena waktu CPU pekerjaan gagal tidak diketahui.
-
-Folder runs diabaikan Git secara default. Pilih hasil yang diperlukan untuk laporan secara terpisah setelah memeriksa isinya.
-
-## Bukti demonstrasi
-
-Dari PowerShell:
+PowerShell juga dapat mengirim Job setelah `.kube/k3s.yaml` tersedia di folder repository yang diakses melalui WSL:
 
 ```powershell
-wsl -d Ubuntu --cd "$PWD" -- ./.tools/kubernetes-bin/kubectl --context kind-soka-local get nodes -o wide
-wsl -d Ubuntu --cd "$PWD" -- ./.tools/kubernetes-bin/kubectl --context kind-soka-local -n soka-heuristik get pods -o wide
+.\run-kubernetes.ps1 -Mode verify
+.\run-kubernetes.ps1 -DatasetSize 1000
+.\run-kubernetes.ps1 -AllDatasets
 ```
 
-Ambil screenshot dua worker node Ready, empat pod Running dengan dua pod per worker, dan laporan scheduler yang menunjukkan status BERHASIL. Sertakan file hasil dari run yang sama serta penjelasan bahwa pod bukan VM.
+Default sekarang adalah profil **k3s**. Perintah tidak memasang K3s atau mengubah jaringan Windows secara otomatis. Jangan menjalankan lebih dari satu eksperimen pada empat pod yang sama.
 
-## Struktur repository
+## Alur algoritma dan task
 
 ```text
-README.md
-PUSH.md                    Langkah push mandiri ke GitHub tujuan
-run-kubernetes.ps1         Menjalankan dari PowerShell
-scheduler.py               RR, dispatch dan pencatatan hasil
-kube_backend.py            Setup cluster, verifikasi dan kubectl exec
-worker.py                  Komputasi hash nyata
-kubernetes/
-  kind.yaml                1 control-plane dan 2 worker
-  install_kind.py          Installer kind dan kubectl lokal
-data/
-  GoCJ_Dataset_*.txt        19 dataset asli 100-1000 task
-  manifest.json            Ukuran dan SHA-256 seluruh 22 file sumber
-  GoCJ_DataSet_Monte_Carlo.xlsx  Workbook historis
-  Original_DataSet.txt      Dataset original
-  GoCJ Java Generator.txt   Generator historis
-  README.md                Atribusi dataset
-docs/
-  alur-kubernetes.md       Diagram dan alur demonstrasi
-tests/
-  test_kubernetes.py       Pengujian kode
+GoCJ -> pemetaan i % 4 -> empat antrean pod
+     -> kubectl exec -> SHA-256 nyata dalam container
+     -> checksum + waktu CPU/wall -> CSV/JSON/report.txt
+     -> volume hasil -> web NodePort 30080
 ```
 
-Tidak membutuhkan paket Python eksternal. Pengujian dari folder repository:
+RR membagi task ke pod; Kubernetes menempatkan pod ke node. Kode tidak mengganti scheduler internal Kubernetes. Antrean tiap pod serial, antrean antar-pod paralel. Panjang GoCJ dikalikan skala iterasi untuk membentuk beban CPU; bukan pengukuran instruksi hardware atau eksekusi pekerjaan asli Google.
+
+## Dataset dan hasil
+
+[data/](data/README.md) memuat seluruh **22 file** sumber: 19 dataset 100-1000 task, workbook Monte Carlo, data original dan generator historis. Isi asli diperiksa dengan manifest SHA-256. Scheduler membaca TXT numerik; workbook/generator disimpan sebagai sumber historis.
+
+Hasil Job disimpan pada PVC `rr-results`, di folder timestamp. `report.txt` memuat laporan rapi, `tasks.csv` mencatat pod/node/UID/checksum/status, `summary.json` memuat metrik serta hash dataset, `topology.json` menyimpan bukti pemeriksaan API, dan `plan.json` berisi pemetaan RR. Folder hasil bisa dibuka melalui layanan HTTP read-only pada NodePort 30080. Hanya hasil eksperimen yang boleh disimpan di volume web, bukan token atau kubeconfig.
+
+Makespan termasuk overhead kubectl; waiting time sampai pemanggilan setiap task. CPU utilization membandingkan CPU time worker dengan kapasitas waktu empat limit CPU pod, bukan utilisasi seluruh laptop. Run gagal tidak layak dijadikan pembanding kinerja karena CPU time task gagal tidak diketahui.
+
+## File utama
+
+| File | Fungsi |
+|---|---|
+| [docs/K3S-DUA-LAPTOP.md](docs/K3S-DUA-LAPTOP.md) | Instalasi, jaringan, build, deploy, akses hasil dan troubleshooting |
+| scripts/network_check.py | Uji TCP 18080 dan UDP 8472 antar-WSL |
+| scripts/open-lab-firewall.ps1 | Aturan Defender dan firewall WSL yang dibatasi peer/subnet |
+| scripts/install-k3s.sh | Instalasi server/agent native dengan Docker runtime |
+| Dockerfile | Image Python, kubectl, seluruh dataset dan aplikasi |
+| kube_backend.py | Verifikasi, setup worker dan kubectl exec |
+| scheduler.py | RR, antrean dan pencatatan metrik |
+| scripts/submit_experiment.py | Mengirim Job baru dan batch seluruh dataset |
+| kubernetes/k3s/workers.yaml | Empat pod dengan dua pod per node |
+| kubernetes/k3s/application.yaml | RBAC, PVC, Deployment web dan NodePort |
+| kubernetes/k3s/job.yaml | Job statis eksperimen 100 task |
+| results_server.py | Menampilkan file hasil melalui HTTP |
+| [PUSH.md](PUSH.md) | Push sendiri ke repository GitHub tujuan |
+
+Manifest worker juga dibentuk langsung oleh resources() pada backend. Bila image/tag diubah, samakan pada backend, manifest, Job dan kedua Docker Engine.
+
+## Pengujian dan bukti
 
 ```powershell
 python -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-Unit test menggunakan API tiruan untuk validasi placement, kesiapan, identitas dan hasil. Bukti eksekusi nyata tetap berasal dari run cluster.
+Pengujian mencakup data asli, pemetaan RR, placement, identitas pod, profil K3s, service-account dispatch dan Job. Pengujian API memakai respons tiruan. Dua laptop, UDP jaringan kampus, build image dan volume hasil tetap harus diuji langsung mengikuti panduan.
+
+Bukti penyerahan: dua perangkat fisik, dua Node Ready dengan IP Wi-Fi berbeda, empat pod komputasi pada node yang sesuai, Job Complete, laporan tanpa kegagalan dan halaman hasil yang dibuka dari perangkat lain. Dua objek Node saja tidak membuktikan dua laptop fisik.
+
+Panduan lama satu laptop disimpan sebagai [arsip kind](docs/KIND-SATU-LAPTOP.md); gunakan `-ClusterMode kind` secara eksplisit bila memang ingin mode tersebut. Bukan jalur aktif dua laptop.
 
 ## Kelompok 5 - Institut Teknologi Sepuluh Nopember
 
@@ -172,7 +127,8 @@ Unit test menggunakan API tiruan untuk validasi placement, kesiapan, identitas d
 
 ## Referensi
 
-- [Docker Desktop WSL 2](https://docs.docker.com/desktop/features/wsl/)
-- [kind Quick Start](https://kind.sigs.k8s.io/docs/user/quick-start/)
-- [Penempatan pod Kubernetes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/)
+- [K3s dengan Docker runtime](https://docs.k3s.io/advanced#using-docker-as-the-container-runtime)
+- [K3s requirements](https://docs.k3s.io/installation/requirements)
+- [WSL networking](https://learn.microsoft.com/en-us/windows/wsl/networking)
+- [Docker Engine Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 - [GoCJ dataset](https://data.mendeley.com/datasets/b7bp6xhrcd/1)

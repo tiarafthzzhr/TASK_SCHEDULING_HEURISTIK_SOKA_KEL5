@@ -1,18 +1,21 @@
-"""Local kind cluster: two worker nodes, two CPU worker pods per node."""
+"""Kubernetes RR workers: local kind or K3s across two physical laptops."""
 import argparse
 import json
 import os
 from pathlib import Path
 import subprocess
 
-CLUSTER = "soka-local"
-CONTEXT = "kind-" + CLUSTER
+MODE = os.environ.get("SOKA_CLUSTER_MODE", "kind")
+if MODE not in ("kind", "k3s"):
+    raise ValueError("SOKA_CLUSTER_MODE must be kind or k3s")
+CLUSTER = "soka-k3s" if MODE == "k3s" else "soka-local"
+CONTEXT = os.environ.get("SOKA_KUBE_CONTEXT", "default" if MODE == "k3s" else "kind-" + CLUSTER)
 NAMESPACE = "soka-heuristik"
 LABEL = "soka.lab/host"
 
 
 def command(args, source=None, timeout=120):
-    if args[0] in ("kind", "kubectl"):
+    if MODE == "kind" and args[0] in ("kind", "kubectl"):
         local_kind = Path(__file__).resolve().parent / ".tools" / "kubernetes-bin" / (
             args[0] + (".exe" if os.name == "nt" else ""))
         if local_kind.exists():
@@ -29,7 +32,12 @@ def command(args, source=None, timeout=120):
 
 def kubectl(*args, source=None, timeout=120):
     # Never mutate or execute against the user's unrelated current context.
-    return command(["kubectl", "--context", CONTEXT, "--namespace", NAMESPACE, *args],
+    selection = [] if os.environ.get("SOKA_IN_CLUSTER") == "1" else ["--context", CONTEXT]
+    if MODE == "k3s" and not selection and not os.environ.get("KUBERNETES_SERVICE_HOST"):
+        raise ValueError("In-cluster execution requires a Kubernetes service account")
+    if MODE == "k3s" and selection and not os.environ.get("KUBECONFIG"):
+        raise ValueError("Set KUBECONFIG explicitly for the K3s cluster")
+    return command(["kubectl", *selection, "--namespace", NAMESPACE, *args],
                    source, timeout)
 
 
@@ -50,7 +58,9 @@ def resources():
                                "automountServiceAccountToken": False,
                                "securityContext": {"runAsNonRoot": True, "runAsUser": 10001,
                                                    "runAsGroup": 10001},
-                               "containers": [{"name": "worker", "image": "python:3.12-slim",
+                                               "containers": [{"name": "worker", "image": os.environ.get(
+                                                   "SOKA_WORKER_IMAGE", "soka-task-scheduler:v1" if MODE == "k3s" else "python:3.12-slim"),
+                                               "imagePullPolicy": "Never" if MODE == "k3s" else "IfNotPresent",
                                                "command": ["python3", "-c", "import time; time.sleep(10**9)"],
                                                "resources": {"requests": {"cpu": "100m", "memory": "32Mi"},
                                                              "limits": {"cpu": "1", "memory": "128Mi"}},
@@ -78,14 +88,14 @@ def verify(data):
         if len(matches) != 1 or not ready(matches[0]):
             raise ValueError(f"Need one Ready node labelled {LABEL}={host['name']}")
         node = matches[0]
-        if "node-role.kubernetes.io/control-plane" in node["metadata"].get("labels", {}):
+        if MODE == "kind" and "node-role.kubernetes.io/control-plane" in node["metadata"].get("labels", {}):
             raise ValueError("Worker pods must not use the control-plane node")
         hosts[host["name"]] = node["metadata"]["name"]
     if len(set(hosts.values())) != 2:
         raise ValueError("Need two distinct Kubernetes worker nodes")
     evidence = {"datacenter": CLUSTER, "context": CONTEXT, "namespace": NAMESPACE,
-                "mode": "local-kubernetes-container-lab", "physical_hosts_verified": False,
-                "note": "Nodes are kind containers; pods are not VMs.",
+                "mode": "k3s-two-laptop-lab" if MODE == "k3s" else "local-kubernetes-container-lab", "physical_hosts_verified": False,
+                "note": "Physical laptop identity requires external evidence; pods are not VMs." if MODE == "k3s" else "Nodes are kind containers; pods are not VMs.",
                 "hosts": [{"name": h, "node": n} for h, n in hosts.items()], "pods": []}
     seen = set()
     for vm in data["workers"]:
@@ -123,13 +133,17 @@ def execute(vm, job, source):
 
 
 def print_topology(evidence):
-    print("\nTOPOLOGI EKSEKUSI KUBERNETES LOKAL")
-    print("1 cluster -> 2 worker node -> masing-masing 2 pod worker (4 pod)")
-    print("Control-plane: 1 node tambahan untuk pengelolaan cluster")
+    print("\nTOPOLOGI EKSEKUSI KUBERNETES")
+    if evidence["mode"] == "k3s-two-laptop-lab":
+        print("1 cluster -> 2 node K3s -> 2 pod worker per node (4 pod)")
+        print("Control-plane pada node pertama juga menjalankan dua pod worker.")
+    else:
+        print("1 cluster -> 2 worker node -> masing-masing 2 pod worker (4 pod)")
+        print("Control-plane: 1 node tambahan untuk pengelolaan cluster")
     for host in evidence["hosts"]:
         names = [p["pod"] for p in evidence["pods"] if p["host"] == host["name"]]
         print(f"  {host['node']} -> {', '.join(names)}")
-    print("Lab satu laptop: node berupa container kind, pod bukan VM.")
+    print(evidence["note"])
 
 
 def format_report(summary, evidence, rows, output):
@@ -139,7 +153,7 @@ def format_report(summary, evidence, rows, output):
         return f"  {label:<28}: {value}"
 
     successful = summary["tasks"] - summary["failed"]
-    lines = [line, "HASIL EKSEKUSI REAL WORLD - KUBERNETES LOKAL".center(width), line,
+    lines = [line, "HASIL EKSEKUSI REAL WORLD - KUBERNETES".center(width), line,
              metric("Algoritma", "Round Robin (RR) - heuristik"),
              metric("Cluster", evidence["datacenter"]),
              metric("Dataset", summary.get("dataset", "GoCJ")),
@@ -158,10 +172,14 @@ def format_report(summary, evidence, rows, output):
         assigned = [r for r in rows if r.get("pod") == pod["pod"]]
         done = sum(r["status"] == "ok" for r in assigned)
         lines.append(f"  {pod['node']:<26} {pod['pod']:<16} {len(assigned):>7} {done:>9} {len(assigned) - done:>7}")
-    lines += ["", "TOPOLOGI", "-" * width,
-              "  1 cluster -> 2 worker node -> 2 pod per worker (total 4 pod)",
-              "  1 control-plane tambahan untuk pengelolaan cluster.",
-              "  Node kind berupa container; pod bukan VM.", "",
+    topology = (["  1 cluster -> 2 node K3s -> 2 pod per node (total 4 pod)",
+                 "  Node pertama: control-plane dan worker; node kedua: worker.",
+                 "  Identitas dua laptop fisik perlu bukti terpisah; pod bukan VM."]
+                if evidence["mode"] == "k3s-two-laptop-lab" else
+                ["  1 cluster -> 2 worker node -> 2 pod per worker (total 4 pod)",
+                 "  1 control-plane tambahan untuk pengelolaan cluster.",
+                 "  Node kind berupa container; pod bukan VM."])
+    lines += ["", "TOPOLOGI", "-" * width, *topology, "",
               "FILE HASIL", "-" * width]
     path = str(Path(output).resolve())
     # WSL drive paths are also shown as native Windows paths for easy navigation.
@@ -175,6 +193,17 @@ def format_report(summary, evidence, rows, output):
 
 
 def setup():
+    if MODE == "k3s":
+        # Nodes must already have been installed, joined and labelled on both laptops.
+        nodes = json.loads(kubectl("get", "nodes", "-o", "json"))["items"]
+        for host in ("host1", "host2"):
+            matching = [n for n in nodes if n["metadata"].get("labels", {}).get(LABEL) == host]
+            if len(matching) != 1 or not ready(matching[0]):
+                raise ValueError(f"Need one Ready K3s node labelled {LABEL}={host}")
+        kubectl("apply", "-f", "-", source=json.dumps(resources()))
+        kubectl("wait", "--for=condition=Ready", "pods", "-l", "app=rr-worker", "--timeout=300s", timeout=330)
+        print_topology(verify(inventory()))
+        return
     command(["docker", "info"], timeout=30)
     clusters = command(["kind", "get", "clusters"]).splitlines()
     if CLUSTER not in clusters:

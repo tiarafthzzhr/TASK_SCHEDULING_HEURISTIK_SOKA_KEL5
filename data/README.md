@@ -11,6 +11,6 @@ manifest.json mencatat nama, ukuran byte, SHA-256 dan jumlah task setiap dataset
 
 Sumber: Hussain et al., **GoCJ: Google Cloud Jobs Dataset**, [Mendeley Data](https://data.mendeley.com/datasets/b7bp6xhrcd/1). Dataset tidak dibuat ulang dan tidak diklaim sebagai buatan kelompok.
 
-Default menjalankan seluruh dataset 100 task. Gunakan -DatasetSize 1000 untuk seluruh dataset 1000, atau -AllDatasets untuk seluruh 19 ukuran secara berurutan. -Tasks hanya digunakan bila sengaja ingin subset kecil. Pemilihan dataset tidak menggabungkan atau menggandakan isi file.
+Default Job menjalankan seluruh dataset 100 task. Pada K3s gunakan python3 scripts/submit_experiment.py --dataset-size 1000 atau --all-datasets untuk seluruh 19 ukuran berurutan. Wrapper PowerShell mendukung -DatasetSize dan -AllDatasets setelah kubeconfig siap. -Tasks hanya untuk subset yang sengaja diminta. Pemilihan dataset tidak menggabungkan atau menggandakan isi file.
 
 Panjang GoCJ dikalikan iterations-per-mi untuk membentuk pekerjaan SHA-256 nyata di pod Kubernetes. Nilai MI adalah skala beban, bukan pengukuran instruksi hardware. Nama dataset, jumlah task sumber dan SHA-256 turut dicatat pada summary.json setiap run.

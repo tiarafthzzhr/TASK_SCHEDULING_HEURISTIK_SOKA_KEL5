@@ -1,0 +1,53 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rr-experiment
+  namespace: soka-heuristik
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: rr-controller
+    spec:
+      restartPolicy: Never
+      serviceAccountName: rr-controller
+      nodeSelector:
+        soka.lab/host: host1
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+      containers:
+        - name: scheduler
+          image: soka-task-scheduler:v1
+          imagePullPolicy: Never
+          command: ["python3", "scheduler.py"]
+          args: ["run", "--dataset-size", "100", "--iterations-per-mi", "10"]
+          env:
+            - name: SOKA_CLUSTER_MODE
+              value: k3s
+            - name: SOKA_IN_CLUSTER
+              value: "1"
+            - name: SOKA_OUTPUT_ROOT
+              value: /results
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: results
+              mountPath: /results
+      volumes:
+        - name: results
+          persistentVolumeClaim:
+            claimName: rr-results
