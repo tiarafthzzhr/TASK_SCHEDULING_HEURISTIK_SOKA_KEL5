@@ -4,7 +4,7 @@
 
 Proyek ini menjalankan penjadwalan task **Round Robin (RR)** pada Kubernetes lokal menggunakan **Docker Desktop, Ubuntu WSL 2, dan kind**. Dataset tetap menggunakan GoCJ dari eksperimen sebelumnya. Pekerjaan CPU benar-benar dijalankan dalam pod, kemudian waktu eksekusi, checksum dan statusnya dicatat.
 
-**Topologi yang digunakan: 1 cluster, 2 worker node, dan 2 pod komputasi pada setiap worker**, ditambah 1 control-plane. Seluruhnya berjalan pada satu laptop.
+
 
 > Node kind adalah container Docker dan pod bukan VM. Dokumentasi ini menunjukkan implementasi Kubernetes lokal; tidak menyatakan adanya dua host fisik atau empat VM. Pengelompokan satu cluster sebagai lingkungan datacenter logis perlu mengikuti interpretasi tugas yang diterima dosen.
 
