@@ -6,8 +6,6 @@ Proyek ini menjalankan penjadwalan task **Round Robin (RR)** pada Kubernetes lok
 
 
 
-> Node kind adalah container Docker dan pod bukan VM. Dokumentasi ini menunjukkan implementasi Kubernetes lokal; tidak menyatakan adanya dua host fisik atau empat VM. Pengelompokan satu cluster sebagai lingkungan datacenter logis perlu mengikuti interpretasi tugas yang diterima dosen.
-
 ## Daftar isi
 
 1. [Arsitektur sistem](#arsitektur-sistem)
@@ -71,8 +69,8 @@ Controller Python berjalan di Ubuntu WSL, **di luar cluster**. Pada profil kind,
 | Docker Desktop | Engine Linux yang dipakai pada eksperimen terdokumentasi |
 | kind | Membentuk node Kubernetes sebagai container Docker |
 | Control-plane | Mengelola API dan penempatan pod; tidak menjalankan empat antrean task RR |
-| Dua worker node | Masing-masing menampung dua pod komputasi |
-| Empat pod Python | Mengerjakan task hash sesuai antrean yang ditentukan RR |
+| Dua worker node | Masing-masing menampung kedua komputasi |
+| Empat Python | Mengerjakan task hash sesuai antrean yang ditentukan RR |
 | File hasil | Menyimpan bukti placement, pemetaan task, checksum, waktu dan status |
 
 ### Penempatan worker dan sumber daya
