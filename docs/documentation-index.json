@@ -1,0 +1,202 @@
+[
+  {
+    "dataset_tasks": 100,
+    "image": "docs/images/task-0100.jpg",
+    "source_image": "100.jpg",
+    "image_sha256": "c2881b0957ba5fa495a0e43fc2a54de56bc1ce20383fd9e923b0ffa25c1666be",
+    "run": "20261030-230143",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_100.txt",
+      "dataset_tasks": 100,
+      "dataset_sha256": "56f388ec57097229b86dee2dc70784f1fc1a8d7376aa98e5fc3efb3ca7a53a3e",
+      "tasks": 100,
+      "failed": 0,
+      "makespan_s": 34.302799410999796,
+      "average_wait_s": 15.046479908440114,
+      "task_cpu_utilization_pct": 56.3783758536293,
+      "iterations_per_mi": 10
+    }
+  },
+  {
+    "dataset_tasks": 200,
+    "image": "docs/images/task-0200.jpeg",
+    "source_image": "WhatsApp Image 2026-10-30 at 23.16.28.jpeg",
+    "image_sha256": "7050d074d931446ac1207064befa0fdfeeda0df1332b9262b6f8da0683eb1461",
+    "run": "20261030-230710",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_200.txt",
+      "dataset_tasks": 200,
+      "dataset_sha256": "b010ae9738eefede885c676b60562422258a904d745be5666571af39c1d3d955",
+      "tasks": 200,
+      "failed": 0,
+      "makespan_s": 78.39560482300021,
+      "average_wait_s": 38.18301186286526,
+      "task_cpu_utilization_pct": 56.3491362583245,
+      "iterations_per_mi": 10
+    }
+  },
+  {
+    "dataset_tasks": 300,
+    "image": "docs/images/task-0300.jpeg",
+    "source_image": "WhatsApp Image 2026-10-30 at 23.16.42.jpeg",
+    "image_sha256": "5596f2536b8a2e277d6d198779f1803a93abf5521292ab5380214de06b991ca3",
+    "run": "20261030-231004",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_300.txt",
+      "dataset_tasks": 300,
+      "dataset_sha256": "f86f79d9264f1eb4064f77d23a164dbfe4dfa6330d0c354714f3b4c2eda48eb9",
+      "tasks": 300,
+      "failed": 0,
+      "makespan_s": 123.27605355700052,
+      "average_wait_s": 59.96893225123708,
+      "task_cpu_utilization_pct": 58.16103844255356,
+      "iterations_per_mi": 10
+    }
+  },
+  {
+    "dataset_tasks": 400,
+    "image": "docs/images/task-0400.jpeg",
+    "source_image": "WhatsApp Image 2026-10-30 at 23.17.22.jpeg",
+    "image_sha256": "881d19a104d335f14da1d08636dbf704a0c8f25683cd7a4b382324b1e358bba7",
+    "run": "20261030-231424",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_400.txt",
+      "dataset_tasks": 400,
+      "dataset_sha256": "6589d62b19ca36216d641486703826582bfeff99728726f80ebbc14eaf1fb741",
+      "tasks": 400,
+      "failed": 0,
+      "makespan_s": 158.4522233739999,
+      "average_wait_s": 72.16998294171209,
+      "task_cpu_utilization_pct": 56.63925260197785,
+      "iterations_per_mi": 10
+    }
+  },
+  {
+    "dataset_tasks": 500,
+    "image": "docs/images/task-0500.jpeg",
+    "source_image": "WhatsApp Image 2026-10-30 at 23.26.38.jpeg",
+    "image_sha256": "7eb8ab33fdd9f9315d4141ce2f955241732182d765110988eabc4a94e2a6226e",
+    "run": "20261030-231944",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_500.txt",
+      "dataset_tasks": 500,
+      "dataset_sha256": "c2792fce2695fa822ed73976dec88c3d1b7a97d24d9440d1063ac04428299617",
+      "tasks": 500,
+      "failed": 0,
+      "makespan_s": 187.05271587599964,
+      "average_wait_s": 86.7784893118057,
+      "task_cpu_utilization_pct": 57.05157305935304,
+      "iterations_per_mi": 10
+    }
+  },
+  {
+    "dataset_tasks": 600,
+    "image": "docs/images/task-0600.jpeg",
+    "source_image": "WhatsApp Image 2026-10-30 at 23.30.13.jpeg",
+    "image_sha256": "ae288e8e204bdd7ffb377b9ad3073a30c43f6b8191d016eb3d9781c6861b7604",
+    "run": "20261030-232608",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_600.txt",
+      "dataset_tasks": 600,
+      "dataset_sha256": "6369fd20e97bcdb99d101fd96dfa1a509a952ee4044cbb42e5af70a04e4ca45e",
+      "tasks": 600,
+      "failed": 0,
+      "makespan_s": 227.24981449299958,
+      "average_wait_s": 106.99515186521637,
+      "task_cpu_utilization_pct": 58.69758293206839,
+      "iterations_per_mi": 10
+    }
+  },
+  {
+    "dataset_tasks": 700,
+    "image": "docs/images/task-0700.jpeg",
+    "source_image": "WhatsApp Image 2026-10-30 at 23.40.15.jpeg",
+    "image_sha256": "a263665e2d4d69c75ad620f64eb4526c5083866d402b4ca5fd2adb88be9d9c25",
+    "run": "20261030-233338",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_700.txt",
+      "dataset_tasks": 700,
+      "dataset_sha256": "8a12bd3f5d7618018c844e9cac436a012b6bf0eaeb8b19946fba93440e309c6e",
+      "tasks": 700,
+      "failed": 0,
+      "makespan_s": 209.21738252500018,
+      "average_wait_s": 100.47797577733694,
+      "task_cpu_utilization_pct": 54.96382815945466,
+      "iterations_per_mi": 10
+    }
+  },
+  {
+    "dataset_tasks": 800,
+    "image": "docs/images/task-0800.jpeg",
+    "source_image": "WhatsApp Image 2026-10-30 at 23.45.06.jpeg",
+    "image_sha256": "6f93fac8007a3d0bbebefda7d14a83b8c13a5260bd600c256508f2a1da561224",
+    "run": "20261030-234059",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_800.txt",
+      "dataset_tasks": 800,
+      "dataset_sha256": "2bf8dad3d87523e710998e270c59044bafe97c46d378eedd3eed865ddb68386e",
+      "tasks": 800,
+      "failed": 0,
+      "makespan_s": 226.28994857599992,
+      "average_wait_s": 112.54841591890226,
+      "task_cpu_utilization_pct": 57.118348050859225,
+      "iterations_per_mi": 10
+    }
+  },
+  {
+    "dataset_tasks": 900,
+    "image": "docs/images/task-0900.jpeg",
+    "source_image": "WhatsApp Image 2026-10-30 at 23.54.05.jpeg",
+    "image_sha256": "c686fe4796b098b9a77b76a2b0815e56640003e11dc76c534416432ed1c17cc5",
+    "run": "20261030-234853",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_900.txt",
+      "dataset_tasks": 900,
+      "dataset_sha256": "4525a5589a326006aba758218aebd336813bc535caf2880f789735e0d3e038d3",
+      "tasks": 900,
+      "failed": 0,
+      "makespan_s": 264.17356049999944,
+      "average_wait_s": 126.33226715825401,
+      "task_cpu_utilization_pct": 59.18469275571214,
+      "iterations_per_mi": 10
+    }
+  },
+  {
+    "dataset_tasks": 1000,
+    "image": "docs/images/task-1000.jpeg",
+    "source_image": "WhatsApp Image 2026-10-31 at 00.04.49.jpeg",
+    "image_sha256": "a20600d102620ae69e5ae34c50756ef1fecdd8a2c7b41c72ddeb1981f100ec4b",
+    "run": "20261030-235802",
+    "summary": {
+      "algorithm": "RR",
+      "mode": "real-kubernetes-exec",
+      "dataset": "GoCJ_Dataset_1000.txt",
+      "dataset_tasks": 1000,
+      "dataset_sha256": "a4a3fa564c4407a950360650103883434de88234fc51de39ac46e85ebbd98628",
+      "tasks": 1000,
+      "failed": 0,
+      "makespan_s": 302.55181768700095,
+      "average_wait_s": 141.77172872127213,
+      "task_cpu_utilization_pct": 56.41396967529549,
+      "iterations_per_mi": 10
+    }
+  }
+]
